@@ -9,9 +9,10 @@ const Navbar = () => {
       <div className="flex justify-between items-center px-6 py-4">
         <h1 className="text-2xl md:text-4xl font-bold">Pranitha Saravanan</h1>
         <ul className="hidden md:flex gap-8 text-lg">
-          <li><a href="#home" className="hover:text-purple-400">Home</a></li>
+          <li><a href="#home" className=" hover:text-purple-400">Home</a></li>
           <li><a href="#about" className="hover:text-purple-400">About</a></li>
           <li><a href="#skills" className="hover:text-purple-400">Skills</a></li>
+          <li><a href="#experience" className="hover:text-purple-400">Experience</a></li>
           <li><a href="#project" className="hover:text-purple-400">Project</a></li>
           <li><a href="#contact" className="hover:text-purple-400">Contact</a></li>
         </ul>
@@ -27,6 +28,7 @@ const Navbar = () => {
           <li><a href="#home" onClick={() => setIsOpen(false)}>Home</a></li>
           <li><a href="#about" onClick={() => setIsOpen(false)}>About</a></li>
           <li><a href="#skills" onClick={() => setIsOpen(false)}>Skills</a></li>
+          <li><a href="#experience" onClick={() => setIsOpen(false)}>Experience</a></li>
           <li><a href="#project" onClick={() => setIsOpen(false)}>Project</a></li>
           <li><a href="#contact" onClick={() => setIsOpen(false)}>Contact</a></li>
         </ul>

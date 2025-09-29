@@ -1,12 +1,24 @@
 "use client";
 import React, { useRef, useEffect } from "react";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import Image from "next/image";
 import { CgProfile } from "react-icons/cg";
 import { RiGlobalFill } from "react-icons/ri";
 import { FaCode, FaLightbulb, FaExplosion } from "react-icons/fa6";
 import { SiSkillshare } from "react-icons/si";
 import { FaProjectDiagram } from "react-icons/fa";
+import { MdPermContactCalendar } from "react-icons/md";
+import { MdEmail } from "react-icons/md";
+import { FaPhoneAlt } from "react-icons/fa";
+import { FaLocationDot } from "react-icons/fa6";
+import { FaGithub } from "react-icons/fa";
+import { SiLeetcode } from "react-icons/si";
+import { FaLinkedin } from "react-icons/fa";
+import { IoLogoHtml5 } from "react-icons/io5";
+import { SlCalender } from "react-icons/sl";
+import { GiJourney } from "react-icons/gi";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { gsap } from "gsap";
 
 const purple = "#a259ff";
@@ -24,85 +36,98 @@ export default function Home() {
     { name: "Git and GitHub", percent: 75 },
   ];
 
-  const barRefs = useRef([]);
-  const bubbleRefs = useRef([]);
+  gsap.registerPlugin(ScrollTrigger);
 
-  const SkillItem = ({ skill, index }) => {
-    const barRef = useRef(null);
-    const bubbleRef = useRef(null);
+        const barRefs = useRef([]);
+        const bubbleRefs = useRef([]);
 
-    useEffect(() => {
-      barRefs.current[index] = barRef.current;
-      bubbleRefs.current[index] = bubbleRef.current;
-    }, [index]);
+        const SkillItem = ({ skill, index }) => {
+          const barRef = useRef(null);
+          const bubbleRef = useRef(null);
 
-    return (
-      <div className="w-full mb-6">
-        <p className="font-medium text-xl mb-2">{skill.name}</p>
-        <div className="relative w-full h-4 bg-gray-900 rounded-full overflow-hidden border border-gray-700">
-          <div
-            ref={barRef}
-            className="h-full rounded-full absolute left-0 top-0"
-            style={{
-              width: 0,
-              background: purple,
-              transition: "background 0.3s",
-            }}
-          />
-          <div
-            ref={bubbleRef}
-            className="absolute top-1/2 left-0 flex items-center justify-center rounded-full font-bold text-lg select-none"
-            style={{
-              width: "35px",
-              height: "35px",
-              background: "#15161f",
-              color: "white",
-              border: `2px solid white`,
-              boxShadow: "0 2px 8px rgba(0,0,0,0.18)",
-              transform: "translateY(-50%) scale(0.82)",
-              left: 0,
-              zIndex: 2,
-              pointerEvents: "none",
-            }}
-          >
-            0%
-          </div>
-        </div>
-      </div>
-    );
-  };
-  useEffect(() => {
-    skills.forEach((skill, index) => {
-      const bar = barRefs.current[index];
-      const bubble = bubbleRefs.current[index];
-      if (bar && bubble) {
-        gsap.to(bar, {
-          width: `${skill.percent}%`,
-          duration: 1.1,
-          ease: "power3.out",
-          delay: index * 0.16,
-        });
-        gsap.to(bubble, {
-          left: `calc(${skill.percent}% - 15px)`, 
-          duration: 1.1,
-          ease: "power3.out",
-          delay: index * 0.16,
-          onUpdate: function () {
-            const progress = gsap.getProperty(bar, "width");
-            let containerW = bar.parentElement.offsetWidth || 1;
-            let percent =
-              (parseFloat(bar.style.width || 0) / containerW) * skill.percent;
-            percent = isNaN(percent) ? 0 : Math.round(percent);
-            bubble.textContent = `${percent}%`;
-          },
-          onComplete: function () {
-            bubble.textContent = `${skill.percent}%`;
-          },
-        });
-      }
-    });
-  }, [skills]);
+          useEffect(() => {
+            barRefs.current[index] = barRef.current;
+            bubbleRefs.current[index] = bubbleRef.current;
+          }, [index]);
 
+          return (
+            <div className="w-full mb-6">
+              <p className="font-medium text-xl mb-2">{skill.name}</p>
+              <div className="relative w-full h-4 bg-gray-900 rounded-full overflow-hidden border border-gray-700">
+                <div
+                  ref={barRef}
+                  className="h-full rounded-full absolute left-0 top-0"
+                  style={{
+                    width: 0,
+                    background: purple,
+                    transition: "background 0.3s",
+                  }}
+                />
+                <div
+                  ref={bubbleRef}
+                  className="absolute top-1/2 left-0 flex items-center justify-center rounded-full font-bold text-lg select-none"
+                  style={{
+                    width: "35px",
+                    height: "35px",
+                    background: "#15161f",
+                    color: "white",
+                    border: `2px solid white`,
+                    boxShadow: "0 2px 8px rgba(0,0,0,0.18)",
+                    transform: "translateY(-50%) scale(0.82)",
+                    left: 0,
+                    zIndex: 2,
+                    pointerEvents: "none",
+                  }}
+                >
+                  0%
+                </div>
+              </div>
+            </div>
+          );
+        };
+
+        useEffect(() => {
+          skills.forEach((skill, index) => {
+            const bar = barRefs.current[index];
+            const bubble = bubbleRefs.current[index];
+
+            if (bar && bubble) {
+              ScrollTrigger.create({
+                trigger: bar.parentElement, 
+                start: "top 80%", 
+                onEnter: () => {
+                  // animate bar
+                  gsap.to(bar, {
+                    width: `${skill.percent}%`,
+                    duration: 1.2,
+                    ease: "power3.out",
+                    delay: index * 0.1,
+                  });
+
+                  // animate bubble
+                  gsap.to(bubble, {
+                    left: `calc(${skill.percent}% - 15px)`,
+                    duration: 1.2,
+                    ease: "power3.out",
+                    delay: index * 0.1,
+                    onUpdate: function () {
+                      const progress = gsap.getProperty(bar, "width");
+                      let containerW = bar.parentElement.offsetWidth || 1;
+                      let percent =
+                        (parseFloat(bar.style.width || 0) / containerW) * skill.percent;
+                      percent = isNaN(percent) ? 0 : Math.round(percent);
+                      bubble.textContent = `${percent}%`;
+                    },
+                    onComplete: function () {
+                      bubble.textContent = `${skill.percent}%`;
+                    },
+                  });
+                },
+                once: true, 
+              });
+            }
+          });
+        }, [skills]);
   return (
     <>
       <Navbar />
@@ -137,7 +162,7 @@ export default function Home() {
       <section id="about" className="px-4 md:px-10 lg:px-14 py-10">
   <div className="flex justify-center">
     <button className="border-2 py-3 px-6 rounded-full text-white mb-7 flex items-center">
-      <CgProfile className="text-2xl md:text-3xl mr-2" />
+      <CgProfile className="text-4xl md:text-3xl mr-2 text-purple-400"  />
       <span className="text-base md:text-lg lg:text-xl">ABOUT ME</span>
     </button>
   </div>
@@ -233,7 +258,7 @@ export default function Home() {
       <section id="skills" className="min-h-screen bg-black text-white px-6 py-16">
           <div className="flex justify-center mb-12">
             <button className="border-2 py-3 px-7 rounded-full text-white flex items-center">
-              <SiSkillshare className="text-2xl md:text-3xl mr-2" />
+              <SiSkillshare className="text-4xl md:text-3xl mr-2 text-purple-400"  />
               <span className="text-base md:text-lg lg:text-xl font-semibold">
                 MY SKILLS
               </span>
@@ -245,10 +270,61 @@ export default function Home() {
             ))}
           </div>
         </section>
-      <section id="project" className="min-h-screen bg-black text-white px-6 py-14">
+        <section id="experience" className="bg-black text-white px-6 pt-16 pb-30">
+          <div className="flex justify-center mb-10">
+          <button className="border-2 py-2 px-6 rounded-full text-white flex items-center">
+            <GiJourney className="text-4xl md:text-3xl mr-2 text-purple-400"  />
+            <span className="text-sm md:text-base lg:text-lg">EXPERIENCE</span>
+          </button>
+        </div>
+            <div className="flex flex-col md:flex-row gap-6">
+            <div className="flex-1 border border-purple-400 rounded-2xl shadow-lg p-6 md:p-8 bg-black/40 backdrop-blur-lg hover:scale-105 transition-transform duration-300">
+              <div className="flex items-center gap-2 mb-3 text-purple-300">
+                <IoLogoHtml5 className="text-2xl" />
+                <h3 className="text-lg font-semibold">Web Development Internship</h3>
+              </div>
+              <h4 className="font-medium text-white/80 mb-1">Kevell Global Solutions</h4>
+              <div className="flex items-center gap-3 text-white/70 mb-3">
+                <SlCalender />
+                <span>June 2025 - July 2025</span>
+              </div>
+              <div className="flex items-center gap-3 text-white/70 mb-3">
+                <FaLocationDot />
+                <span>Madurai</span>
+              </div>
+              <p className="text-white/80 mb-3">
+                Interned at Kevell Global Solution, developing and enhancing the Yummy’s Kitchen project. Implemented interactive components, optimized website performance, and ensured mobile responsiveness.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                <span className="bg-purple-600 text-white px-3 py-1 rounded-full text-sm">HTML</span>
+                <span className="bg-purple-600 text-white px-3 py-1 rounded-full text-sm">CSS</span>
+              </div>
+            </div>
+            <div className="flex-1 border border-purple-400 rounded-2xl shadow-lg p-6 md:p-8 bg-black/40 backdrop-blur-lg hover:scale-105 transition-transform duration-300">
+              <div className="flex items-center gap-2 mb-3 text-purple-300">
+                <FaProjectDiagram className="text-2xl" />
+                <h3 className="text-lg font-semibold">Project Expo</h3>
+              </div>
+              <h4 className="font-medium text-white/80 mb-1">Anna University Regional Campus</h4>
+              <div className="flex items-center gap-3 text-white/70 mb-3">
+                <SlCalender />
+                <span>27 September 2025</span>
+              </div>
+              <div className="flex items-center gap-3 text-white/70 mb-3">
+                <FaLocationDot />
+                <span>Madurai</span>
+              </div>
+              <p className="text-white/80 mb-3">
+                Interned at Kevell Global Solution, developing and enhancing the Yummy’s Kitchen project. Implemented interactive components, optimized website performance, and ensured mobile responsiveness.
+              </p>
+              <p className="text-white/80 font-semibold">Won 3rd Prize</p>
+            </div>
+          </div>
+        </section>
+       <section id="project" className="min-h-screen bg-black text-white ">
         <div className="flex justify-center mb-10">
           <button className="border-2 py-2 px-6 rounded-full text-white flex items-center">
-            <FaProjectDiagram className="text-lg md:text-3xl mr-2" />
+            <FaProjectDiagram className="text-4xl md:text-3xl mr-2 text-purple-400"  />
             <span className="text-sm md:text-base lg:text-lg">PROJECT</span>
           </button>
         </div>
@@ -332,7 +408,7 @@ export default function Home() {
             </p>
             <div className="flex justify-center gap-4 mt-6">
               <a  
-                href="https://github.com/pranitha080511/DNP-glow.git" 
+                href="https://github.com/DharunNagavel/Tribal-Earth-360.git" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="border-2 py-2 px-5 rounded-full text-purple-400 hover:bg-purple-400 hover:text-white transition duration-300 cursor-pointer text-center"
@@ -365,7 +441,7 @@ export default function Home() {
             </p>
             <div className="flex justify-center gap-4 mt-6">
               <a  
-                href="https://github.com/pranitha080511/DNP-glow.git" 
+                href="https://github.com/pranitha080511/Portfolio.git" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="border-2 py-2 px-5 rounded-full text-purple-400 hover:bg-purple-400 hover:text-white transition duration-300 cursor-pointer text-center"
@@ -385,12 +461,106 @@ export default function Home() {
         </div>
       </div>
       </section>
-      <section id="contact" className="min-h-screen bg-black text-white px-6 py-16">
-         <div className="flex justify-center mb-10">
-          
-
-         </div>
+      <section id="contact" className="  text-white px-6 py-16">
+        <div className="flex justify-center mb-12">
+          <button className="border-2 py-2 px-6 rounded-full text-white flex items-center">
+            <MdPermContactCalendar className="text-4xl md:text-3xl mr-2 text-purple-400" />
+            <span className="text-lg md:text-xl font-semibold tracking-wide">CONTACT</span>
+          </button>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+          <div className="border border-purple-400 rounded-2xl shadow-lg p-8 hover:scale-105 transition-transform duration-300 bg-black/40 backdrop-blur-lg">
+            <h3 className="text-2xl font-bold text-violet-400 mb-6 text-center">
+              Contact Information
+            </h3>
+            <div className="space-y-6">
+              <div className="flex items-center gap-4">
+                <MdEmail className="text-purple-400 text-4xl border border-purple-400 p-2 rounded-full shadow-md hover:bg-purple-400/10 transition" />
+                <p className="text-lg">
+                  <span className="font-semibold">Email: </span>
+                  <a
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=pranisaravanan2005@gmail.com"
+                    target="_blank"
+                    className="hover:text-violet-300 transition"
+                  >
+                    pranisaravanan2005@gmail.com
+                  </a>
+                </p>
+              </div>
+              <div className="flex items-center gap-4">
+                <FaPhoneAlt className="text-purple-400 text-4xl border border-purple-400 p-2 rounded-full shadow-md hover:bg-purple-400/10 transition" />
+                <p className="text-lg">
+                  <span className="font-semibold">Phone: </span>
+                  <a
+                    href="https://wa.me/918925107335"
+                    target="_blank"
+                    className="hover:text-violet-300 transition"
+                  >
+                    +91 89251 07335
+                  </a>
+                </p>
+              </div>
+              <div className="flex items-center gap-4">
+                <FaLocationDot className="text-purple-400 text-4xl border border-purple-400 p-2 rounded-full shadow-md hover:bg-purple-400/10 transition" />
+                <p className="text-lg">
+                  <span className="font-semibold">Location: </span>
+                  <a
+                    href="https://maps.app.goo.gl/zymzkCuzvZHManh27?g_st=aw"
+                    target="_blank"
+                    className="hover:text-violet-300 transition"
+                  >
+                    Madurai
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="border border-purple-400 rounded-2xl shadow-lg p-8 hover:scale-105 transition-transform duration-300 bg-black/40 backdrop-blur-lg">
+            <h3 className="text-2xl font-bold text-violet-400 mb-6 text-center">
+              Connect with Me
+            </h3>
+            <div className="space-y-6">
+              <div className="flex items-center gap-4">
+                <FaLinkedin className="text-purple-400 text-4xl border border-purple-400 p-2 rounded-full shadow-md hover:bg-purple-400/10 transition" />
+                <p className="text-lg">
+                  <a
+                    href="https://www.linkedin.com/in/pranitha-saravanan-329435300/"
+                    target="_blank"
+                    className="hover:text-violet-300 transition"
+                  >
+                    Linkedin
+                  </a>
+                </p>
+              </div>
+              <div className="flex items-center gap-4">
+                <FaGithub className="text-purple-400 text-4xl border border-purple-400 p-2 rounded-full shadow-md hover:bg-purple-400/10 transition" />
+                <p className="text-lg">
+                  <a
+                    href="https://github.com/pranitha080511"
+                    target="_blank"
+                    className="hover:text-violet-300 transition"
+                  >
+                    GitHub
+                  </a>
+                </p>
+              </div>
+              <div className="flex items-center gap-4">
+                <SiLeetcode className="text-purple-400 text-4xl border border-purple-400 p-2 rounded-full shadow-md hover:bg-purple-400/10 transition" />
+                <p className="text-lg">
+                  <a
+                    href="https://leetcode.com/u/Zuac1JDzNs/"
+                    target="_blank"
+                    className="hover:text-violet-300 transition"
+                  >
+                    Leetcode
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
+      <Footer />
     </>
   );
 }
