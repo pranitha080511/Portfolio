@@ -132,33 +132,50 @@ export default function Home() {
     <>
       <Navbar />
       <section
-        id="home"
-        className="min-h-screen flex flex-col justify-center items-center bg-black text-white px-6 text-center"
+  id="home"
+  className="min-h-screen flex flex-col md:flex-row justify-center items-center bg-black text-white px-6 py-16 md:py-0"
+>
+  {/* Photo on Left */}
+  <div className="md:w-1/2 flex justify-center mb-8 md:mb-0">
+    <Image
+      src="/profile.jpg"
+      alt="Profile"
+      width={300}
+      height={300}
+      className="object-cover w-64 h-64 md:w-72 md:h-72 rounded-md border-4 border-purple-400"
+    />
+  </div>
+
+  {/* Content on Right */}
+  <div className="md:w-1/2 flex flex-col justify-center text-center md:text-left md:pl-12">
+    <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+      Hi, I'm <span className="text-purple-400">Pranitha Saravanan</span>
+    </h1>
+    <p className="text-gray-300 text-base sm:text-lg md:text-xl mb-6 max-w-xl">
+      I am a passionate Frontend Developer with experience in creating
+      responsive, user-friendly, and visually appealing web applications.
+      I specialize in translating design mockups into interactive interfaces
+      using technologies like HTML, CSS, JavaScript, and modern frameworks
+      such as React JS and GSAP for animation.
+    </p>
+
+    <div className="flex flex-col sm:flex-row gap-3">
+      <a
+        href="#contact"
+        className="border-2 py-2 px-5 rounded-full text-purple-400 hover:text-white transition duration-300 cursor-pointer text-center"
       >
-        <Image
-          src="/profile.jpg"
-          alt="Profile"
-          width={150}
-          height={150}
-          className="rounded-full border-4 border-purple-400 mb-5 object-cover"
-        />
-        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
-          Hai, I'm <span className="text-purple-400">Pranitha Saravanan</span>
-        </h1>
-        <p className="text-gray-300 text-sm sm:text-base md:text-xl max-w-2xl">
-          I am a passionate Frontend Developer with experience in creating
-          responsive, user-friendly, and visually appealing web applications.
-          I specialize in translating design mockups into interactive interfaces using technologies like HTML, CSS, JavaScript, and modern frameworks such as React JS and GSAP for animation.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-3 mt-6">
-          <button className="border-2 py-2 px-5 rounded-full text-purple-400 hover:text-white transition duration-300 cursor-pointer">
-            REACH OUT
-          </button>
-          <button className="border-2 py-2 px-5 rounded-full text-purple-400 hover:text-white transition duration-300 cursor-pointer">
-            DOWNLOAD RESUME
-          </button>
-        </div>
-      </section>
+        REACH OUT
+      </a>
+      <a
+        href="/PranithaSaravanan_Resume.pdf"
+        download="PranithaSaravanan_Resume.pdf"
+        className="border-2 py-2 px-5 rounded-full text-purple-400 hover:text-white transition duration-300 cursor-pointer text-center"
+      >
+        DOWNLOAD RESUME
+      </a>
+    </div>
+  </div>
+</section>
       <section id="about" className="px-4 md:px-10 lg:px-14 py-10">
   <div className="flex justify-center">
     <button className="border-2 py-3 px-6 rounded-full text-white mb-7 flex items-center">
@@ -270,6 +287,38 @@ export default function Home() {
             ))}
           </div>
         </section>
+        <section id="internship" className="bg-black text-white px-6 pt-16 pb-30">
+        <div className="flex justify-center mb-10">
+          <button className="border-2 py-2 px-6 rounded-full text-white flex items-center">
+            <IoLogoHtml5 className="text-4xl md:text-3xl mr-2 text-purple-400" />
+            <span className="text-sm md:text-base lg:text-lg">INTERNSHIP</span>
+          </button>
+        </div>
+          <div className="flex justify-center">
+            <div className="max-w-md border border-purple-400 rounded-2xl shadow-lg p-6 bg-black/40 backdrop-blur-lg hover:scale-105 transition-transform duration-300">
+                  <div className="flex items-center gap-2 mb-3 text-purple-300">
+                    <IoLogoHtml5 className="text-2xl" />
+                    <h3 className="text-lg font-semibold">Web Development Internship</h3>
+            </div>
+            <h4 className="font-medium text-white/80 mb-1">Kevell Global Solutions</h4>
+            <div className="flex items-center gap-3 text-white/70 mb-3">
+              <SlCalender />
+              <span>June 2025 - July 2025</span>
+            </div>
+            <div className="flex items-center gap-3 text-white/70 mb-3">
+              <FaLocationDot />
+              <span>Madurai</span>
+            </div>
+            <p className="text-white/80 mb-3">
+              Worked at Kevell Global Solutions, developing and enhancing the Yummy’s Kitchen project. Implemented interactive components, optimized website performance, and ensured mobile responsiveness.
+            </p>
+          <div className="flex flex-wrap gap-2">
+            <span className="bg-purple-600 text-white px-3 py-1 rounded-full text-sm">HTML</span>
+            <span className="bg-purple-600 text-white px-3 py-1 rounded-full text-sm">CSS</span>
+          </div>
+         </div>
+       </div>
+        </section>
         <section id="experience" className="bg-black text-white px-6 pt-16 pb-30">
           <div className="flex justify-center mb-10">
           <button className="border-2 py-2 px-6 rounded-full text-white flex items-center">
@@ -277,27 +326,26 @@ export default function Home() {
             <span className="text-sm md:text-base lg:text-lg">EXPERIENCE</span>
           </button>
         </div>
-            <div className="flex flex-col md:flex-row gap-6">
+          <div className="flex flex-col md:flex-row gap-6">
             <div className="flex-1 border border-purple-400 rounded-2xl shadow-lg p-6 md:p-8 bg-black/40 backdrop-blur-lg hover:scale-105 transition-transform duration-300">
               <div className="flex items-center gap-2 mb-3 text-purple-300">
                 <IoLogoHtml5 className="text-2xl" />
-                <h3 className="text-lg font-semibold">Web Development Internship</h3>
+                <h3 className="text-lg font-semibold">Hackathon</h3>
               </div>
-              <h4 className="font-medium text-white/80 mb-1">Kevell Global Solutions</h4>
+              <h4 className="font-medium text-white/80 mb-1">SRM Madurai Engineering College</h4>
               <div className="flex items-center gap-3 text-white/70 mb-3">
                 <SlCalender />
-                <span>June 2025 - July 2025</span>
+                <span>14 October 2025</span>
               </div>
               <div className="flex items-center gap-3 text-white/70 mb-3">
                 <FaLocationDot />
                 <span>Madurai</span>
               </div>
               <p className="text-white/80 mb-3">
-                Interned at Kevell Global Solution, developing and enhancing the Yummy’s Kitchen project. Implemented interactive components, optimized website performance, and ensured mobile responsiveness.
+                Won 2nd prize in a hackathon in the domain of AI and blockchain for the project titled PatientX.
               </p>
-              <div className="flex flex-wrap gap-2">
-                <span className="bg-purple-600 text-white px-3 py-1 rounded-full text-sm">HTML</span>
-                <span className="bg-purple-600 text-white px-3 py-1 rounded-full text-sm">CSS</span>
+              <div className="text-white/80 font-semibold">
+                Won 2nd Prize
               </div>
             </div>
             <div className="flex-1 border border-purple-400 rounded-2xl shadow-lg p-6 md:p-8 bg-black/40 backdrop-blur-lg hover:scale-105 transition-transform duration-300">
@@ -315,7 +363,7 @@ export default function Home() {
                 <span>Madurai</span>
               </div>
               <p className="text-white/80 mb-3">
-                Interned at Kevell Global Solution, developing and enhancing the Yummy’s Kitchen project. Implemented interactive components, optimized website performance, and ensured mobile responsiveness.
+                Secured 3rd prize for the project TribalEarth 360, which focuses on forest rights awareness and sustainable land management.
               </p>
               <p className="text-white/80 font-semibold">Won 3rd Prize</p>
             </div>
@@ -416,7 +464,7 @@ export default function Home() {
                 View Source Code
               </a>
               <a 
-                href="https://react-project-sage-rho.vercel.app/" 
+                href="https://tribal-earth-360.vercel.app/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="border-2 py-2 px-5 rounded-full text-purple-400 hover:bg-purple-400 hover:text-white transition duration-300 cursor-pointer text-center"
@@ -427,21 +475,22 @@ export default function Home() {
           </div>
           <div className="border-2 border-purple-300 rounded-xl shadow-lg p-6 max-w-sm hover:scale-105 transition-transform duration-300">
             <div className="w-40 h-40 mx-auto rounded-full overflow-hidden">
-              <Image 
-                src="/profile.jpg"
-                alt="profile"
-                width={160}
-                height={160}
-                className="object-cover"
+              <Image
+              src="/patient.png"
+              alt="PatientX Logo"
+              width={160}
+              height={160}
+              className="object-cover w-40 h-40 rounded-full"
               />
+
             </div>
-            <h3 className="font-bold text-violet-400 text-center text-xl mt-4">Portfolio</h3>
+            <h3 className="font-bold text-violet-400 text-center text-xl mt-4">PatientX</h3>
             <p className="mt-4 text-gray-200 text-xl">
-             My portfolio website is a modern, responsive platform built using Next.js and Tailwind CSS. It showcases my projects, skills, and creativity through clean layouts, smooth animations, offering visitors a seamless browsing experience.The site also includes sections for skills, projects.
+             PatientX is a modern, responsive web application built using React.js, Tailwind CSS, and Node.js. The platform is designed to provide a seamless experience for managing patient records, appointments, and healthcare workflows.It features an intuitive user interface.
             </p>
             <div className="flex justify-center gap-4 mt-6">
               <a  
-                href="https://github.com/pranitha080511/Portfolio.git" 
+                href="https://github.com/DharunNagavel/PatientX.git" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="border-2 py-2 px-5 rounded-full text-purple-400 hover:bg-purple-400 hover:text-white transition duration-300 cursor-pointer text-center"

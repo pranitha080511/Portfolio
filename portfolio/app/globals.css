@@ -1,6 +1,17 @@
 @import "tailwindcss";
 
-*{
-  font-family: Outfit;
+/* Apply smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Set global font and background color */
+* {
+  font-family: Outfit, sans-serif;
   background-color: black;
+}
+
+/* Optional: ensure sections scroll correctly under fixed navbar */
+section {
+  scroll-margin-top: 5rem; /* adjust to match your navbar height */
 }
