@@ -1,4 +1,4 @@
-"use client";
+
 import React, { useState } from "react";
 import { CiMenuBurger } from "react-icons/ci";
 import { IoMdClose } from "react-icons/io";
