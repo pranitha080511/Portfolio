@@ -13,7 +13,7 @@ const Navbar = () => {
           <li><a href="#about" className="hover:text-purple-400">About</a></li>
           <li><a href="#skills" className="hover:text-purple-400">Skills</a></li>
           <li><a href="#internship" className="hover:text-purple-400">Internship</a></li>
-          <li><a href="#experience" className="hover:text-purple-400">Experience</a></li>
+          <li><a href="#experience" className="hover:text-purple-400">Achievements</a></li>
           <li><a href="#project" className="hover:text-purple-400">Project</a></li>
           <li><a href="#contact" className="hover:text-purple-400">Contact</a></li>
         </ul>
@@ -30,7 +30,7 @@ const Navbar = () => {
           <li><a href="#about" onClick={() => setIsOpen(false)}>About</a></li>
           <li><a href="#skills" onClick={() => setIsOpen(false)}>Skills</a></li>
           <li><a href="#internship" onClick={() => setIsOpen(false)}>Internship</a></li>
-          <li><a href="#experience" onClick={() => setIsOpen(false)}>Experience</a></li>
+          <li><a href="#experience" onClick={() => setIsOpen(false)}>Achievements</a></li>
           <li><a href="#project" onClick={() => setIsOpen(false)}>Project</a></li>
           <li><a href="#contact" onClick={() => setIsOpen(false)}>Contact</a></li>
         </ul>

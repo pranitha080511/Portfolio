@@ -288,42 +288,82 @@ export default function Home() {
           </div>
         </section>
         <section id="internship" className="bg-black text-white px-6 pt-16 pb-30">
-        <div className="flex justify-center mb-10">
-          <button className="border-2 py-2 px-6 rounded-full text-white flex items-center">
-            <IoLogoHtml5 className="text-4xl md:text-3xl mr-2 text-purple-400" />
-            <span className="text-sm md:text-base lg:text-lg">INTERNSHIP</span>
-          </button>
+  <div className="flex justify-center mb-10">
+    <button className="border-2 py-2 px-6 rounded-full text-white flex items-center">
+      <IoLogoHtml5 className="text-4xl md:text-3xl mr-2 text-purple-400" />
+      <span className="text-sm md:text-base lg:text-lg">INTERNSHIP</span>
+    </button>
+  </div>
+
+  {/* Cards Container */}
+  <div className="flex justify-center">
+    <div className="flex flex-col md:flex-row gap-8">
+
+      {/* Card 1 */}
+      <div className="max-w-md border border-purple-400 rounded-2xl shadow-lg p-6 bg-black/40 backdrop-blur-lg hover:scale-105 transition-transform duration-300">
+        <div className="flex items-center gap-2 mb-3 text-purple-300">
+          <IoLogoHtml5 className="text-2xl" />
+          <h3 className="text-lg font-semibold">Web Development Internship</h3>
         </div>
-          <div className="flex justify-center">
-            <div className="max-w-md border border-purple-400 rounded-2xl shadow-lg p-6 bg-black/40 backdrop-blur-lg hover:scale-105 transition-transform duration-300">
-                  <div className="flex items-center gap-2 mb-3 text-purple-300">
-                    <IoLogoHtml5 className="text-2xl" />
-                    <h3 className="text-lg font-semibold">Web Development Internship</h3>
-            </div>
-            <h4 className="font-medium text-white/80 mb-1">Kevell Global Solutions</h4>
-            <div className="flex items-center gap-3 text-white/70 mb-3">
-              <SlCalender />
-              <span>June 2025 - July 2025</span>
-            </div>
-            <div className="flex items-center gap-3 text-white/70 mb-3">
-              <FaLocationDot />
-              <span>Madurai</span>
-            </div>
-            <p className="text-white/80 mb-3">
-              Worked at Kevell Global Solutions, developing and enhancing the Yummy’s Kitchen project. Implemented interactive components, optimized website performance, and ensured mobile responsiveness.
-            </p>
-          <div className="flex flex-wrap gap-2">
-            <span className="bg-purple-600 text-white px-3 py-1 rounded-full text-sm">HTML</span>
-            <span className="bg-purple-600 text-white px-3 py-1 rounded-full text-sm">CSS</span>
-          </div>
-         </div>
-       </div>
-        </section>
+
+        <h4 className="font-medium text-white/80 mb-1">
+          Kevell Global Solutions
+        </h4>
+
+        <div className="flex items-center gap-3 text-white/70 mb-3">
+          <SlCalender />
+          <span>June 2025 - July 2025</span>
+        </div>
+
+        <div className="flex items-center gap-3 text-white/70 mb-3">
+          <FaLocationDot />
+          <span>Madurai</span>
+        </div>
+        <p className="text-white/80 mb-3">
+          Worked on developing and enhancing the Yummy’s Kitchen project by implementing interactive UI components and ensuring mobile responsiveness.
+        </p>
+        <div className="flex flex-wrap gap-2">
+          <span className="bg-purple-600 px-3 py-1 rounded-full text-sm">HTML</span>
+          <span className="bg-purple-600 px-3 py-1 rounded-full text-sm">CSS</span>
+        </div>
+      </div>
+      <div className="max-w-md border border-purple-400 rounded-2xl shadow-lg p-6 bg-black/40 backdrop-blur-lg hover:scale-105 transition-transform duration-300">
+        <div className="flex items-center gap-2 mb-3 text-purple-300">
+          <IoLogoHtml5 className="text-2xl" />
+          <h3 className="text-lg font-semibold">Web Development Virtual Internship</h3>
+        </div>
+        <h4 className="font-medium text-white/80 mb-1">
+          Cognifyz Technologies
+        </h4>
+        <div className="flex items-center gap-3 text-white/70 mb-3">
+          <SlCalender />
+          <span>December 2025-January 2026</span>
+        </div>
+        <div className="flex items-center gap-3 text-white/70 mb-3">
+          <FaLocationDot />
+          <span>Virtual</span>
+        </div>
+        <p className="text-white/80 mb-3">
+          Going to participate in a virtual AI/ML internship focused on real-time projects, hands-on learning, and solving real-world problems.
+        </p>
+        <div className="flex flex-wrap gap-2">
+          <span className="bg-purple-600 px-3 py-1 rounded-full text-sm">HTML</span>
+          <span className="bg-purple-600 px-3 py-1 rounded-full text-sm">CSS</span>
+          <span className="bg-purple-600 px-3 py-1 rounded-full text-sm">JavaScript</span>
+          <span className="bg-purple-600 px-3 py-1 rounded-full text-sm">Bootstrap</span>
+          <span className="bg-purple-600 px-3 py-1 rounded-full text-sm">Bulma</span>
+          <span className="bg-purple-600 px-3 py-1 rounded-full text-sm">Material UI</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
         <section id="experience" className="bg-black text-white px-6 pt-16 pb-30">
           <div className="flex justify-center mb-10">
           <button className="border-2 py-2 px-6 rounded-full text-white flex items-center">
             <GiJourney className="text-4xl md:text-3xl mr-2 text-purple-400"  />
-            <span className="text-sm md:text-base lg:text-lg">EXPERIENCE</span>
+            <span className="text-sm md:text-base lg:text-lg">ACHIEVEMENTS</span>
           </button>
         </div>
           <div className="flex flex-col md:flex-row gap-6">
@@ -366,6 +406,25 @@ export default function Home() {
                 Secured 3rd prize for the project TribalEarth 360, which focuses on forest rights awareness and sustainable land management.
               </p>
               <p className="text-white/80 font-semibold">Won 3rd Prize</p>
+            </div>
+             <div className="flex-1 border border-purple-400 rounded-2xl shadow-lg p-6 md:p-8 bg-black/40 backdrop-blur-lg hover:scale-105 transition-transform duration-300">
+              <div className="flex items-center gap-2 mb-3 text-purple-300">
+                <FaProjectDiagram className="text-2xl" />
+                <h3 className="text-lg font-semibold">Hackathon</h3>
+              </div>
+              <h4 className="font-medium text-white/80 mb-1">Indian Institue Information Technology Bhopal</h4>
+              <div className="flex items-center gap-3 text-white/70 mb-3">
+                <SlCalender />
+                <span>27 September 2025</span>
+              </div>
+              <div className="flex items-center gap-3 text-white/70 mb-3">
+                <FaLocationDot />
+                <span>Bhopal(virtual)</span>
+              </div>
+              <p className="text-white/80 mb-3">
+               Secured 1st Prize in the ETHIndia track, winning a cash award of $100 for outstanding project implementation.
+              </p>
+              <p className="text-white/80 font-semibold">Won 1st Prize</p>
             </div>
           </div>
         </section>
