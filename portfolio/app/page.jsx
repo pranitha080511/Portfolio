@@ -358,7 +358,6 @@ export default function Home() {
     </div>
   </div>
 </section>
-
         <section id="experience" className="bg-black text-white px-6 pt-16 pb-30">
           <div className="flex justify-center mb-10">
           <button className="border-2 py-2 px-6 rounded-full text-white flex items-center">
@@ -385,7 +384,7 @@ export default function Home() {
                 Won 2nd prize in a hackathon in the domain of AI and blockchain for the project titled PatientX.
               </p>
               <div className="text-white/80 font-semibold">
-                Won 2nd Prize
+                Won 2nd Prize.
               </div>
             </div>
             <div className="flex-1 border border-purple-400 rounded-2xl shadow-lg p-6 md:p-8 bg-black/40 backdrop-blur-lg hover:scale-105 transition-transform duration-300">
