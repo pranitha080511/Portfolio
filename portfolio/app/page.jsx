@@ -183,7 +183,7 @@ export default function Home() {
         REACH OUT
       </a>
       <a
-        href="/public/Pranitha_Resume.pdf"
+        href="/Pranitha_Resume.pdf" 
         download="Pranitha_Resume.pdf"
         className="border-2 py-2 px-5 rounded-full text-purple-400 hover:text-white transition duration-300 cursor-pointer text-center"
       >
