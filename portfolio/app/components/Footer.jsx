@@ -12,10 +12,7 @@ const Footer = () => {
               Pranitha Saravanan
             </h3>
             <p className="text-sm leading-relaxed text-gray-400">
-              I’m a passionate Frontend Developer who loves transforming ideas into intuitive,
-              engaging, and responsive user interfaces. With a strong eye for design and detail,
-              I specialize in crafting clean, scalable, and user-friendly applications that deliver
-              seamless digital experiences.
+              I’m a passionate Full-Stack Developer and database management enthusiast. I specialize in MERN stack development, building scalable web platforms, integrating modern frameworks, and developing secure backend architectures.
             </p>
           </div>
           <div>
@@ -23,7 +20,7 @@ const Footer = () => {
               Quick Links
             </h3>
             <ul className="space-y-2 text-sm">
-              {['Home','About','Skills','Internship','Experience','Project','Contact'].map((item) => (
+              {['Home','About','Education','Skills','Internship','Experience','Project','Contact'].map((item) => (
                 <li key={item}>
                   <a
                     href={`#${item.toLowerCase()}`}

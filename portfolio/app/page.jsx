@@ -6,13 +6,12 @@ import Image from "next/image";
 
 import { CgProfile } from "react-icons/cg";
 import { RiGlobalFill } from "react-icons/ri";
-import { FaCode, FaLightbulb, FaExplosion } from "react-icons/fa6";
+import { FaCode, FaLightbulb, FaExplosion, FaLocationDot, FaDatabase, FaGraduationCap } from "react-icons/fa6";
 import { SiSkillshare } from "react-icons/si";
 import { FaProjectDiagram } from "react-icons/fa";
 import { MdPermContactCalendar } from "react-icons/md";
 import { MdEmail } from "react-icons/md";
 import { FaPhoneAlt } from "react-icons/fa";
-import { FaLocationDot } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
 import { FaLinkedin } from "react-icons/fa";
@@ -26,15 +25,26 @@ const purple = "#a259ff";
 
 export default function Home() {
   const skills = [
-    { name: "HTML", percent: 92 },
+    { name: "TypeScript", percent: 85 },
+    { name: "JavaScript", percent: 88 },
+    { name: "Java", percent: 80 },
+    { name: "Python", percent: 70 },
+    { name: "C", percent: 68 },
+    { name: "React.js", percent: 88 },
+    { name: "Next.js", percent: 85 },
+    { name: "Node.js", percent: 82 },
+    { name: "Express.js", percent: 80 },
+    { name: "Spring Boot", percent: 75 },
+    { name: "MySQL", percent: 82 },
+    { name: "PostgreSQL", percent: 78 },
+    { name: "MongoDB", percent: 83 },
     { name: "Tailwind CSS", percent: 90 },
-    { name: "JavaScript", percent: 85 },
-    { name: "React JS", percent: 80 },
-    { name: "Next JS", percent: 79 },
-    { name: "GSAP", percent: 60 },
-    { name: "Java", percent: 83 },
-    { name: "DSA", percent: 50 },
-    { name: "Git and GitHub", percent: 75 },
+    { name: "Bootstrap", percent: 88 },
+    { name: "GSAP", percent: 65 },
+    { name: "Data Structures & Algorithms (DSA)", percent: 80 },
+    { name: "Object-Oriented Programming (OOP)", percent: 83 },
+    { name: "Database Management Systems (DBMS)", percent: 84 },
+    { name: "Git & GitHub", percent: 80 },
   ];
 
   gsap.registerPlugin(ScrollTrigger);
@@ -54,7 +64,7 @@ export default function Home() {
           return (
             <div className="w-full mb-6">
               <p className="font-medium text-xl mb-2">{skill.name}</p>
-              <div className="relative w-full h-4 bg-gray-900 rounded-full overflow-hidden border border-gray-700">
+              <div className="relative w-full h-4 bg-gray-900 rounded-full border border-gray-700">
                 <div
                   ref={barRef}
                   className="h-full rounded-full absolute left-0 top-0"
@@ -136,15 +146,24 @@ export default function Home() {
   id="home"
   className="min-h-screen flex flex-col md:flex-row justify-center items-center bg-black text-white px-6 py-16 md:py-0"
 >
-  {/* Photo on Left */}
-  <div className="md:w-1/2 flex justify-center mb-8 md:mb-0">
-    <Image
-      src="/profile.jpg"
-      alt="Profile"
-      width={300}
-      height={300}
-      className="object-cover w-64 h-64 md:w-72 md:h-72 rounded-md border-4 border-purple-400"
-    />
+  {/* Photo on Left with Animated Violet Bg Lines */}
+  <div className="md:w-1/2 flex justify-center mb-8 md:mb-0 relative py-10">
+    <div className="relative group flex justify-center items-center">
+      {/* Animated Violet concentric rings */}
+      <div className="absolute inset-0 -m-6 md:-m-8 border-2 border-dashed border-purple-500/25 rounded-full animate-[spin_60s_linear_infinite]" />
+      <div className="absolute inset-0 -m-3 md:-m-4 border border-purple-500/40 rounded-full animate-[spin_30s_linear_infinite_reverse]" />
+      <div className="absolute -inset-2 bg-gradient-to-r from-purple-600 to-violet-600 rounded-2xl blur-2xl opacity-30 group-hover:opacity-60 transition duration-1000 group-hover:duration-200 animate-pulse" />
+      {/* Profile Image Wrapper */}
+      <div className="relative bg-black rounded-2xl overflow-hidden border-2 border-purple-400 shadow-[0_0_40px_rgba(168,85,247,0.3)]">
+        <Image
+          src="/profile.jpg"
+          alt="Profile"
+          width={400}
+          height={400}
+          className="object-cover w-72 h-72 md:w-96 md:h-96 transition-transform duration-500 group-hover:scale-105"
+        />
+      </div>
+    </div>
   </div>
 
   {/* Content on Right */}
@@ -153,11 +172,7 @@ export default function Home() {
       Hi, I'm <span className="text-purple-400">Pranitha Saravanan</span>
     </h1>
     <p className="text-gray-300 text-base sm:text-lg md:text-xl mb-6 max-w-xl">
-      I am a passionate Frontend Developer with experience in creating
-      responsive, user-friendly, and visually appealing web applications.
-      I specialize in translating design mockups into interactive interfaces
-      using technologies like HTML, CSS, JavaScript, and modern frameworks
-      such as React JS and GSAP for animation.
+      I am a skilled Full-Stack Developer and database management enthusiast with strong problem-solving and algorithmic abilities. I specialize in MERN stack development, building scalable web platforms, integrating modern frameworks, and developing secure backend architectures, while bringing a continuous learning mindset to software development.
     </p>
 
     <div className="flex flex-col sm:flex-row gap-3">
@@ -169,7 +184,7 @@ export default function Home() {
       </a>
       <a
         href="/PranithaSaravanan_Resume.pdf"
-        download="PranithaSaravanan_Resume.pdf"
+        download="Pranitha_Resume.pdf"
         className="border-2 py-2 px-5 rounded-full text-purple-400 hover:text-white transition duration-300 cursor-pointer text-center"
       >
         DOWNLOAD RESUME
@@ -178,347 +193,430 @@ export default function Home() {
   </div>
 </section>
       <section id="about" className="px-4 md:px-10 lg:px-14 py-10">
-  <div className="flex justify-center">
-    <button className="border-2 py-3 px-6 rounded-full text-white mb-7 flex items-center">
-      <CgProfile className="text-4xl md:text-3xl mr-2 text-purple-400"  />
-      <span className="text-base md:text-lg lg:text-xl">ABOUT ME</span>
-    </button>
-  </div>
+        <div className="flex justify-center">
+          <button className="border-2 py-3 px-6 rounded-full text-white mb-7 flex items-center">
+            <CgProfile className="text-4xl md:text-3xl mr-2 text-purple-400"  />
+            <span className="text-base md:text-lg lg:text-xl">ABOUT ME</span>
+          </button>
+        </div>
 
-  <div className="flex flex-col md:flex-row justify-between gap-8">
-    <div className="flex-1">
-      <h3 className="text-white border-4 border-b-0 p-4 md:p-5 rounded-t-2xl">
-        <RiGlobalFill className="text-3xl md:text-4xl inline-block text-violet-400" />
-        <span className="inline-block ml-2 text-lg md:text-xl lg:text-2xl align-middle text-violet-400">
-          My Journey
-        </span>
-      </h3>
-      <p className="text-white border-4 border-t-0 p-4 md:p-5 rounded-b-2xl text-sm md:text-base lg:text-lg leading-relaxed">
-        I'm Pranitha Saravanan from Madurai, currently pursuing my Bachelor's
-        degree in Computer Science and Engineering at Kamaraj College of
-        Engineering and Technology. Over the past year, I have gained valuable
-        hands-on experience in frontend development, working on projects that
-        focus on creating responsive, user-friendly, and visually engaging web
-        applications. My journey in web development has been fueled by a deep
-        passion for continuous learning and innovation. I enjoy exploring
-        modern frameworks, libraries, and design principles that help transform
-        ideas into meaningful digital experiences. With a strong foundation in
-        HTML, CSS, JavaScript, React.js, Next.js, and GSAP, I specialize in
-        building interfaces that blend smooth performance, intuitive layouts,
-        and creative design. I am particularly fascinated by the impact of
-        motion and interactivity in enhancing user experience. Whether it's
-        developing pixel-perfect layouts, optimizing performance for speed and
-        accessibility, or integrating engaging animations, I strive to craft
-        solutions that are both functional and delightful. Beyond technical
-        skills, I value collaboration and problem-solving, as I believe
-        impactful projects are built through teamwork and innovation. Looking
-        ahead, I aspire to grow as a frontend developer, embrace new
-        challenges, and contribute to projects that make a meaningful
-        difference in the ever-evolving world of web development and digital
-        technology.
-      </p>
-    </div>
-    <div className="flex-1 flex flex-col gap-6">
-      <div>
-        <h3 className="text-white border-4 border-b-0 p-4 md:p-5 rounded-t-2xl">
-          <FaCode className="text-3xl md:text-4xl inline-block text-violet-400" />
-          <span className="inline-block ml-2 text-lg md:text-xl lg:text-2xl align-middle text-violet-400">
-            Practical Architecture
-          </span>
-        </h3>
-        <p className="text-white border-4 border-t-0 p-4 md:p-5 rounded-b-2xl text-sm md:text-base lg:text-lg leading-relaxed">
-          I am a Frontend Developer skilled in building responsive and
-          accessible web applications using HTML, CSS, JavaScript, and
-          frameworks like React, Angular, and Vue. My practical architecture
-          covers UI design, application logic, API integration, and deployment,
-          supported by modern tools such as Git, Webpack, and testing
-          frameworks. I focus on performance optimization, scalability, and
-          user experience, delivering complete and reliable frontend solutions.
-        </p>
-      </div>
-
-      <div>
-        <h3 className="text-white border-4 border-b-0 p-4 md:p-5 rounded-t-2xl">
-          <FaLightbulb className="text-3xl md:text-4xl inline-block text-violet-400" />
-          <span className="inline-block ml-2 text-lg md:text-xl lg:text-2xl align-middle text-violet-400">
-            Skill Driven
-          </span>
-        </h3>
-        <p className="text-white border-4 border-t-0 p-4 md:p-5 rounded-b-2xl text-sm md:text-base lg:text-lg leading-relaxed">
-          I specialize in building full-stack web applications using the MERN
-          stack with a strong focus on frontend development. My expertise lies
-          in creating responsive, user-friendly, and high-performing interfaces
-          using React.js, Next.js, and modern JavaScript, while applying best
-          practices in performance optimization, accessibility, and modern web
-          standards.
-        </p>
-      </div>
-
-      <div>
-        <h3 className="text-white border-4 border-b-0 p-4 md:p-5 rounded-t-2xl">
-          <FaExplosion className="text-3xl md:text-4xl inline-block text-violet-400" />
-          <span className="inline-block ml-2 text-lg md:text-xl lg:text-2xl align-middle text-violet-400">
-            Impact Oriented
-          </span>
-        </h3>
-        <p className="text-white border-4 border-t-0 p-4 md:p-5 rounded-b-2xl text-sm md:text-base lg:text-lg leading-relaxed">
-          I specialize in frontend development, building responsive,
-          user-friendly, and high-performing web interfaces using React.js,
-          Next.js, JavaScript (ES6+), and modern UI frameworks. My focus is on
-          delivering impactful user experiences through performance
-          optimization, accessibility, and seamless integration with backend
-          systems.
-        </p>
-      </div>
-    </div>
-  </div>
-  </section>
-      <section id="skills" className="min-h-screen bg-black text-white px-6 py-16">
-          <div className="flex justify-center mb-12">
-            <button className="border-2 py-3 px-7 rounded-full text-white flex items-center">
-              <SiSkillshare className="text-4xl md:text-3xl mr-2 text-purple-400"  />
-              <span className="text-base md:text-lg lg:text-xl font-semibold">
-                MY SKILLS
+        <div className="flex flex-col md:flex-row justify-between gap-8">
+          <div className="flex-1">
+            <h3 className="text-white border-4 border-b-0 p-4 md:p-5 rounded-t-2xl">
+              <RiGlobalFill className="text-3xl md:text-4xl inline-block text-violet-400" />
+              <span className="inline-block ml-2 text-lg md:text-xl lg:text-2xl align-middle text-violet-400">
+                My Journey
               </span>
-            </button>
+            </h3>
+            <p className="text-white border-4 border-t-0 p-4 md:p-5 rounded-b-2xl text-sm md:text-base lg:text-lg leading-relaxed">
+              I'm Pranitha Saravanan from Madurai, currently pursuing my Bachelor's degree in Computer Science and Engineering at Kamaraj College of Engineering and Technology. My journey in software engineering is driven by a deep passion for full-stack web development, database management, and solving complex algorithmic challenges. Over the years, I have built and deployed scalable web applications, integrated secure backend architectures, and worked extensively with database management systems. With a continuous learning mindset, I thrive in fast-paced environments, actively participate in hackathons to build innovative projects, and constantly explore new frameworks and tools. Looking ahead, I am eager to leverage my technical expertise and collaborative spirit to contribute to innovative software development roles.
+            </p>
           </div>
-          <div className="w-full max-w-2xl mx-auto">
-            {skills.map((skill, index) => (
-              <SkillItem key={index} skill={skill} index={index} />
-            ))}
+          <div className="flex-1 flex flex-col gap-6">
+            <div>
+              <h3 className="text-white border-4 border-b-0 p-4 md:p-5 rounded-t-2xl">
+                <FaCode className="text-3xl md:text-4xl inline-block text-violet-400" />
+                <span className="inline-block ml-2 text-lg md:text-xl lg:text-2xl align-middle text-violet-400">
+                  Full-Stack Development
+                </span>
+              </h3>
+              <p className="text-white border-4 border-t-0 p-4 md:p-5 rounded-b-2xl text-sm md:text-base lg:text-lg leading-relaxed">
+                Experienced in MERN stack development, building scalable web platforms, and integrating modern frameworks. I focus on developing secure backend architectures and designing responsive, user-friendly frontend interfaces that deliver seamless digital experiences.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-white border-4 border-b-0 p-4 md:p-5 rounded-t-2xl">
+                <FaLightbulb className="text-3xl md:text-4xl inline-block text-violet-400" />
+                <span className="inline-block ml-2 text-lg md:text-xl lg:text-2xl align-middle text-violet-400">
+                  Problem Solving & Algorithms
+                </span>
+              </h3>
+              <p className="text-white border-4 border-t-0 p-4 md:p-5 rounded-b-2xl text-sm md:text-base lg:text-lg leading-relaxed">
+                Possess strong problem-solving and algorithmic abilities demonstrated through hackathons and hands-on projects. I enjoy designing elegant solutions for complex logic and optimization problems using clean code.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-white border-4 border-b-0 p-4 md:p-5 rounded-t-2xl">
+                <FaDatabase className="text-3xl md:text-4xl inline-block text-violet-400" />
+                <span className="inline-block ml-2 text-lg md:text-xl lg:text-2xl align-middle text-violet-400">
+                  Database Management
+                </span>
+              </h3>
+              <p className="text-white border-4 border-t-0 p-4 md:p-5 rounded-b-2xl text-sm md:text-base lg:text-lg leading-relaxed">
+                Skilled in database management and design across SQL and NoSQL environments like MySQL, PostgreSQL, and MongoDB. I focus on schema modeling, query performance, data integrity, and creating robust database structures.
+              </p>
+            </div>
           </div>
-        </section>
+        </div>
+      </section>
+
+      {/* Education Section */}
+      <section id="education" className="px-4 md:px-10 lg:px-14 py-10 bg-black text-white">
+        <div className="flex justify-center mb-10">
+          <button className="border-2 py-2 px-6 rounded-full text-white flex items-center">
+            <FaGraduationCap className="text-4xl md:text-3xl mr-2 text-purple-400" />
+            <span className="text-sm md:text-base lg:text-lg">EDUCATION</span>
+          </button>
+        </div>
+
+        <div className="flex flex-col md:flex-row gap-6 max-w-6xl mx-auto">
+          {/* College Card */}
+          <div className="flex-1 border border-purple-400 rounded-2xl shadow-lg p-6 md:p-8 bg-black/40 backdrop-blur-lg hover:scale-105 transition-transform duration-300 flex flex-col justify-between">
+            <div>
+              <div className="flex items-center gap-2 mb-3 text-purple-300">
+                <FaGraduationCap className="text-2xl text-violet-400" />
+                <h3 className="text-lg md:text-xl font-bold text-violet-400">Bachelor of Engineering (B.E)</h3>
+              </div>
+              <h4 className="font-semibold text-white/90 text-base md:text-lg mb-1">Computer Science and Engineering</h4>
+              <p className="text-gray-300 text-sm md:text-base mb-4">Kamaraj College of Engineering and Technology</p>
+            </div>
+            <div className="mt-4 pt-4 border-t border-purple-900/30">
+              <div className="flex items-center gap-3 text-white/70 mb-2 text-sm md:text-base">
+                <SlCalender className="text-purple-400" />
+                <span>2022 – 2026</span>
+              </div>
+              <p className="text-purple-400 font-semibold text-lg">CGPA: 9.1 / 10 <span className="text-xs md:text-sm text-gray-400 font-normal">(Till 5th Semester)</span></p>
+            </div>
+          </div>
+
+          {/* HSC Card */}
+          <div className="flex-1 border border-purple-400 rounded-2xl shadow-lg p-6 md:p-8 bg-black/40 backdrop-blur-lg hover:scale-105 transition-transform duration-300 flex flex-col justify-between">
+            <div>
+              <div className="flex items-center gap-2 mb-3 text-purple-300">
+                <FaGraduationCap className="text-2xl text-violet-400" />
+                <h3 className="text-lg md:text-xl font-bold text-violet-400">Higher Secondary Certificate (HSC)</h3>
+              </div>
+              <h4 className="font-semibold text-white/90 text-base md:text-lg mb-1">Secondary Education</h4>
+              <p className="text-gray-300 text-sm md:text-base mb-4">Oxford Matriculation Higher Secondary School</p>
+            </div>
+            <div className="mt-4 pt-4 border-t border-purple-900/30">
+              <div className="flex items-center gap-3 text-white/70 mb-2 text-sm md:text-base">
+                <SlCalender className="text-purple-400" />
+                <span>Passed in 2022</span>
+              </div>
+              <p className="text-purple-400 font-semibold text-lg">Percentage: 92%</p>
+            </div>
+          </div>
+
+          {/* SSLC Card */}
+          <div className="flex-1 border border-purple-400 rounded-2xl shadow-lg p-6 md:p-8 bg-black/40 backdrop-blur-lg hover:scale-105 transition-transform duration-300 flex flex-col justify-between">
+            <div>
+              <div className="flex items-center gap-2 mb-3 text-purple-300">
+                <FaGraduationCap className="text-2xl text-violet-400" />
+                <h3 className="text-lg md:text-xl font-bold text-violet-400">Secondary School Leaving Certificate (SSLC)</h3>
+              </div>
+              <h4 className="font-semibold text-white/90 text-base md:text-lg mb-1">General Schooling</h4>
+              <p className="text-gray-300 text-sm md:text-base mb-4">Shri Ramana Vikaas Higher Secondary School</p>
+            </div>
+            <div className="mt-4 pt-4 border-t border-purple-900/30">
+              <div className="flex items-center gap-3 text-white/70 mb-2 text-sm md:text-base">
+                <SlCalender className="text-purple-400" />
+                <span>Passed in 2020</span>
+              </div>
+              <p className="text-purple-400 font-semibold text-lg">Percentage: 93%</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="skills" className="min-h-screen bg-black text-white px-6 py-16">
+        <div className="flex justify-center mb-12">
+          <button className="border-2 py-3 px-7 rounded-full text-white flex items-center">
+            <SiSkillshare className="text-4xl md:text-3xl mr-2 text-purple-400"  />
+            <span className="text-base md:text-lg lg:text-xl font-semibold">
+              MY SKILLS
+            </span>
+          </button>
+        </div>
+        <div className="w-full max-w-2xl mx-auto">
+          {skills.map((skill, index) => (
+            <SkillItem key={index} skill={skill} index={index} />
+          ))}
+        </div>
+      </section>
         <section id="internship" className="bg-black text-white px-6 pt-16 pb-30">
-  <div className="flex justify-center mb-10">
-    <button className="border-2 py-2 px-6 rounded-full text-white flex items-center">
-      <IoLogoHtml5 className="text-4xl md:text-3xl mr-2 text-purple-400" />
-      <span className="text-sm md:text-base lg:text-lg">INTERNSHIP</span>
-    </button>
-  </div>
+   <div className="flex justify-center mb-10">
+     <button className="border-2 py-2 px-6 rounded-full text-white flex items-center">
+       <IoLogoHtml5 className="text-4xl md:text-3xl mr-2 text-purple-400" />
+       <span className="text-sm md:text-base lg:text-lg font-semibold">INTERNSHIP</span>
+     </button>
+   </div>
 
-  {/* Cards Container */}
-  <div className="flex justify-center">
-    <div className="flex flex-col md:flex-row gap-8">
+   {/* Cards Container */}
+   <div className="flex justify-center">
+     <div className="flex flex-col md:flex-row gap-8 max-w-6xl mx-auto">
 
-      {/* Card 1 */}
-      <div className="max-w-md border border-purple-400 rounded-2xl shadow-lg p-6 bg-black/40 backdrop-blur-lg hover:scale-105 transition-transform duration-300">
-        <div className="flex items-center gap-2 mb-3 text-purple-300">
-          <IoLogoHtml5 className="text-2xl" />
-          <h3 className="text-lg font-semibold">Web Development Internship</h3>
-        </div>
+       {/* Card 1: Kevell Global Solutions */}
+       <div className="flex-1 border border-purple-400 rounded-2xl shadow-lg p-6 bg-black/40 backdrop-blur-lg hover:scale-105 transition-transform duration-300 flex flex-col justify-between">
+         <div>
+           <div className="flex items-center gap-2 mb-3 text-purple-300">
+             <IoLogoHtml5 className="text-2xl text-violet-400" />
+             <h3 className="text-lg md:text-xl font-bold text-violet-400">MERN Stack Intern</h3>
+           </div>
 
-        <h4 className="font-medium text-white/80 mb-1">
-          Kevell Global Solutions
-        </h4>
+           <h4 className="font-semibold text-white/90 text-base md:text-lg mb-1">
+             Kevell Global Solutions
+           </h4>
 
-        <div className="flex items-center gap-3 text-white/70 mb-3">
-          <SlCalender />
-          <span>June 2025 - July 2025</span>
-        </div>
+           <div className="flex items-center gap-3 text-white/70 mb-2 text-sm md:text-base">
+             <SlCalender className="text-purple-400" />
+             <span>June 2025 - July 2025</span>
+           </div>
 
-        <div className="flex items-center gap-3 text-white/70 mb-3">
-          <FaLocationDot />
-          <span>Madurai</span>
-        </div>
-        <p className="text-white/80 mb-3">
-          Worked on developing and enhancing the Yummy’s Kitchen project by implementing interactive UI components and ensuring mobile responsiveness.
-        </p>
-        <div className="flex flex-wrap gap-2">
-          <span className="bg-purple-600 px-3 py-1 rounded-full text-sm">HTML</span>
-          <span className="bg-purple-600 px-3 py-1 rounded-full text-sm">CSS</span>
-        </div>
-      </div>
-      <div className="max-w-md border border-purple-400 rounded-2xl shadow-lg p-6 bg-black/40 backdrop-blur-lg hover:scale-105 transition-transform duration-300">
-        <div className="flex items-center gap-2 mb-3 text-purple-300">
-          <IoLogoHtml5 className="text-2xl" />
-          <h3 className="text-lg font-semibold">Web Development Virtual Internship</h3>
-        </div>
-        <h4 className="font-medium text-white/80 mb-1">
-          Cognifyz Technologies
-        </h4>
-        <div className="flex items-center gap-3 text-white/70 mb-3">
-          <SlCalender />
-          <span>December 2025-January 2026</span>
-        </div>
-        <div className="flex items-center gap-3 text-white/70 mb-3">
-          <FaLocationDot />
-          <span>Virtual</span>
-        </div>
-        <p className="text-white/80 mb-3">
-          Going to participate in a virtual AI/ML internship focused on real-time projects, hands-on learning, and solving real-world problems.
-        </p>
-        <div className="flex flex-wrap gap-2">
-          <span className="bg-purple-600 px-3 py-1 rounded-full text-sm">HTML</span>
-          <span className="bg-purple-600 px-3 py-1 rounded-full text-sm">CSS</span>
-          <span className="bg-purple-600 px-3 py-1 rounded-full text-sm">JavaScript</span>
-          <span className="bg-purple-600 px-3 py-1 rounded-full text-sm">Bootstrap</span>
-          <span className="bg-purple-600 px-3 py-1 rounded-full text-sm">Bulma</span>
-          <span className="bg-purple-600 px-3 py-1 rounded-full text-sm">Material UI</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+           <div className="flex items-center gap-3 text-white/70 mb-3 text-sm md:text-base">
+             <FaLocationDot className="text-purple-400" />
+             <span>Madurai</span>
+           </div>
+           
+           <ul className="text-white/80 text-sm md:text-base lg:text-lg leading-relaxed list-disc pl-5 space-y-2 mt-4 font-normal">
+             <li>Completed a 20-day full-stack development internship.</li>
+             <li>Developed frontend interfaces and integrated backend APIs.</li>
+             <li>Built responsive and interactive user experiences using modern CSS frameworks and JavaScript libraries.</li>
+             <li>Worked closely with mentors to meet project deadlines and improve rendering efficiency.</li>
+           </ul>
+         </div>
+         <div className="flex flex-wrap gap-2 mt-6">
+           <span className="bg-purple-600 px-3 py-1 rounded-full text-xs md:text-sm font-semibold">MERN Stack</span>
+           <span className="bg-purple-600 px-3 py-1 rounded-full text-xs md:text-sm font-semibold">HTML & CSS</span>
+           <span className="bg-purple-600 px-3 py-1 rounded-full text-xs md:text-sm font-semibold">JavaScript</span>
+         </div>
+       </div>
+
+       {/* Card 2: Cognifyz Technologies */}
+       <div className="flex-1 border border-purple-400 rounded-2xl shadow-lg p-6 bg-black/40 backdrop-blur-lg hover:scale-105 transition-transform duration-300 flex flex-col justify-between">
+         <div>
+           <div className="flex items-center gap-2 mb-3 text-purple-300">
+             <IoLogoHtml5 className="text-2xl text-violet-400" />
+             <h3 className="text-lg md:text-xl font-bold text-violet-400">MERN Stack Developer Intern</h3>
+           </div>
+
+           <h4 className="font-semibold text-white/90 text-base md:text-lg mb-1">
+             Cognifyz Technologies
+           </h4>
+
+           <div className="flex items-center gap-3 text-white/70 mb-2 text-sm md:text-base">
+             <SlCalender className="text-purple-400" />
+             <span>December 2025 - January 2026</span>
+           </div>
+
+           <div className="flex items-center gap-3 text-white/70 mb-3 text-sm md:text-base">
+             <FaLocationDot className="text-purple-400" />
+             <span>Virtual</span>
+           </div>
+
+           <ul className="text-white/80 text-sm md:text-base lg:text-lg leading-relaxed list-disc pl-5 space-y-2 mt-4 font-normal">
+             <li>Collaborated with a remote engineering team to design, build, and debug web components using the MERN stack.</li>
+             <li>Applied responsive design practices and state management workflows.</li>
+             <li>Delivered all assigned milestones within a 1-month internship period.</li>
+             <li>Improved web application performance and user experience.</li>
+           </ul>
+         </div>
+         <div className="flex flex-wrap gap-2 mt-6">
+           <span className="bg-purple-600 px-3 py-1 rounded-full text-xs md:text-sm font-semibold">MERN Stack</span>
+           <span className="bg-purple-600 px-3 py-1 rounded-full text-xs md:text-sm font-semibold">Redux</span>
+           <span className="bg-purple-600 px-3 py-1 rounded-full text-xs md:text-sm font-semibold">API Integration</span>
+         </div>
+       </div>
+
+     </div>
+   </div>
+ </section>
         <section id="experience" className="bg-black text-white px-6 pt-16 pb-30">
           <div className="flex justify-center mb-10">
           <button className="border-2 py-2 px-6 rounded-full text-white flex items-center">
             <GiJourney className="text-4xl md:text-3xl mr-2 text-purple-400"  />
-            <span className="text-sm md:text-base lg:text-lg">ACHIEVEMENTS</span>
+            <span className="text-sm md:text-base lg:text-lg font-semibold">ACHIEVEMENTS</span>
           </button>
         </div>
-          <div className="flex flex-col md:flex-row gap-6">
-            <div className="flex-1 border border-purple-400 rounded-2xl shadow-lg p-6 md:p-8 bg-black/40 backdrop-blur-lg hover:scale-105 transition-transform duration-300">
-              <div className="flex items-center gap-2 mb-3 text-purple-300">
-                <IoLogoHtml5 className="text-2xl" />
-                <h3 className="text-lg font-semibold">Hackathon</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+            {/* Card 1 */}
+            <div className="border border-purple-400 rounded-2xl shadow-lg p-6 md:p-8 bg-black/40 backdrop-blur-lg hover:scale-105 transition-transform duration-300 flex flex-col justify-between">
+              <div>
+                <div className="flex items-center gap-2 mb-3 text-purple-300">
+                  <FaProjectDiagram className="text-2xl" />
+                  <h3 className="text-lg font-semibold">Hackathon</h3>
+                </div>
+                <h4 className="font-semibold text-white/90 text-lg mb-1">SRM Madurai Engineering College</h4>
+                <div className="flex items-center gap-3 text-white/70 mb-3 text-sm">
+                  <SlCalender className="text-purple-400" />
+                  <span>14 October 2025</span>
+                </div>
+                <div className="flex items-center gap-3 text-white/70 mb-3 text-sm">
+                  <FaLocationDot className="text-purple-400" />
+                  <span>Madurai</span>
+                </div>
+                <p className="text-white/80 mb-3 text-sm md:text-base lg:text-lg leading-relaxed font-normal">
+                  Won 2nd prize in a hackathon in the domain of AI and blockchain for the project titled PatientX.
+                </p>
               </div>
-              <h4 className="font-medium text-white/80 mb-1">SRM Madurai Engineering College</h4>
-              <div className="flex items-center gap-3 text-white/70 mb-3">
-                <SlCalender />
-                <span>14 October 2025</span>
-              </div>
-              <div className="flex items-center gap-3 text-white/70 mb-3">
-                <FaLocationDot />
-                <span>Madurai</span>
-              </div>
-              <p className="text-white/80 mb-3">
-                Won 2nd prize in a hackathon in the domain of AI and blockchain for the project titled PatientX.
-              </p>
-              <div className="text-white/80 font-semibold">
-                Won 2nd Prize.
-              </div>
+              <p className="text-purple-400 font-bold text-base mt-2">Won 2nd Prize</p>
             </div>
-            <div className="flex-1 border border-purple-400 rounded-2xl shadow-lg p-6 md:p-8 bg-black/40 backdrop-blur-lg hover:scale-105 transition-transform duration-300">
-              <div className="flex items-center gap-2 mb-3 text-purple-300">
-                <FaProjectDiagram className="text-2xl" />
-                <h3 className="text-lg font-semibold">Project Expo</h3>
+
+            {/* Card 2 */}
+            <div className="border border-purple-400 rounded-2xl shadow-lg p-6 md:p-8 bg-black/40 backdrop-blur-lg hover:scale-105 transition-transform duration-300 flex flex-col justify-between">
+              <div>
+                <div className="flex items-center gap-2 mb-3 text-purple-300">
+                  <FaProjectDiagram className="text-2xl" />
+                  <h3 className="text-lg font-semibold">Project Expo</h3>
+                </div>
+                <h4 className="font-semibold text-white/90 text-lg mb-1">Anna University Regional Campus</h4>
+                <div className="flex items-center gap-3 text-white/70 mb-3 text-sm">
+                  <SlCalender className="text-purple-400" />
+                  <span>27 September 2025</span>
+                </div>
+                <div className="flex items-center gap-3 text-white/70 mb-3 text-sm">
+                  <FaLocationDot className="text-purple-400" />
+                  <span>Madurai</span>
+                </div>
+                <p className="text-white/80 mb-3 text-sm md:text-base lg:text-lg leading-relaxed font-normal">
+                  Secured 3rd prize for the project TribalEarth 360, which focuses on forest rights awareness and sustainable land management.
+                </p>
               </div>
-              <h4 className="font-medium text-white/80 mb-1">Anna University Regional Campus</h4>
-              <div className="flex items-center gap-3 text-white/70 mb-3">
-                <SlCalender />
-                <span>27 September 2025</span>
-              </div>
-              <div className="flex items-center gap-3 text-white/70 mb-3">
-                <FaLocationDot />
-                <span>Madurai</span>
-              </div>
-              <p className="text-white/80 mb-3">
-                Secured 3rd prize for the project TribalEarth 360, which focuses on forest rights awareness and sustainable land management.
-              </p>
-              <p className="text-white/80 font-semibold">Won 3rd Prize</p>
+              <p className="text-purple-400 font-bold text-base mt-2">Won 3rd Prize</p>
             </div>
-             <div className="flex-1 border border-purple-400 rounded-2xl shadow-lg p-6 md:p-8 bg-black/40 backdrop-blur-lg hover:scale-105 transition-transform duration-300">
-              <div className="flex items-center gap-2 mb-3 text-purple-300">
-                <FaProjectDiagram className="text-2xl" />
-                <h3 className="text-lg font-semibold">Hackathon</h3>
+
+            {/* Card 3 */}
+            <div className="border border-purple-400 rounded-2xl shadow-lg p-6 md:p-8 bg-black/40 backdrop-blur-lg hover:scale-105 transition-transform duration-300 flex flex-col justify-between">
+              <div>
+                <div className="flex items-center gap-2 mb-3 text-purple-300">
+                  <FaProjectDiagram className="text-2xl" />
+                  <h3 className="text-lg font-semibold">Hackathon</h3>
+                </div>
+                <h4 className="font-semibold text-white/90 text-lg mb-1">IIIT Bhopal (ETHIndia Track)</h4>
+                <div className="flex items-center gap-3 text-white/70 mb-3 text-sm">
+                  <SlCalender className="text-purple-400" />
+                  <span>27 September 2025</span>
+                </div>
+                <div className="flex items-center gap-3 text-white/70 mb-3 text-sm">
+                  <FaLocationDot className="text-purple-400" />
+                  <span>Bhopal (Virtual)</span>
+                </div>
+                <p className="text-white/80 mb-3 text-sm md:text-base lg:text-lg leading-relaxed font-normal">
+                  Secured 1st Prize in the ETHIndia track, winning a cash award of $100 for outstanding project implementation.
+                </p>
               </div>
-              <h4 className="font-medium text-white/80 mb-1">Indian Institue Information Technology Bhopal</h4>
-              <div className="flex items-center gap-3 text-white/70 mb-3">
-                <SlCalender />
-                <span>27 September 2025</span>
+              <p className="text-purple-400 font-bold text-base mt-2">Won 1st Prize</p>
+            </div>
+
+            {/* Card 4 */}
+            <div className="border border-purple-400 rounded-2xl shadow-lg p-6 md:p-8 bg-black/40 backdrop-blur-lg hover:scale-105 transition-transform duration-300 flex flex-col justify-between">
+              <div>
+                <div className="flex items-center gap-2 mb-3 text-purple-300">
+                  <FaProjectDiagram className="text-2xl" />
+                  <h3 className="text-lg font-semibold">Hackathon</h3>
+                </div>
+                <h4 className="font-semibold text-white/90 text-lg mb-1">VibeHacks 2.0</h4>
+                <div className="flex items-center gap-3 text-white/70 mb-3 text-sm">
+                  <SlCalender className="text-purple-400" />
+                  <span>Loveable AI</span>
+                </div>
+                <p className="text-white/80 mb-3 text-sm md:text-base lg:text-lg leading-relaxed font-normal">
+                  Emerged in the Top 20 teams during VibeHacks 2.0, presenting a high-performing project in AI development.
+                </p>
               </div>
-              <div className="flex items-center gap-3 text-white/70 mb-3">
-                <FaLocationDot />
-                <span>Bhopal(virtual)</span>
+              <p className="text-purple-400 font-bold text-base mt-2">Top 20 Finalist</p>
+            </div>
+
+            {/* Card 5 */}
+            <div className="border border-purple-400 rounded-2xl shadow-lg p-6 md:p-8 bg-black/40 backdrop-blur-lg hover:scale-105 transition-transform duration-300 flex flex-col justify-between">
+              <div>
+                <div className="flex items-center gap-2 mb-3 text-purple-300">
+                  <FaProjectDiagram className="text-2xl" />
+                  <h3 className="text-lg font-semibold">Hackathon</h3>
+                </div>
+                <h4 className="font-semibold text-white/90 text-lg mb-1">Gyan Mitra '26</h4>
+                <div className="flex items-center gap-3 text-white/70 mb-3 text-sm">
+                  <FaLocationDot className="text-purple-400" />
+                  <span>MEPCO Schlenk Engineering College</span>
+                </div>
+                <p className="text-white/80 mb-3 text-sm md:text-base lg:text-lg leading-relaxed font-normal">
+                  Qualified and pitched as a finalist in the national-level Gyan Mitra '26 Hackathon event.
+                </p>
               </div>
-              <p className="text-white/80 mb-3">
-               Secured 1st Prize in the ETHIndia track, winning a cash award of $100 for outstanding project implementation.
-              </p>
-              <p className="text-white/80 font-semibold">Won 1st Prize</p>
+              <p className="text-purple-400 font-bold text-base mt-2">Finalist</p>
+            </div>
+
+            {/* Card 6 */}
+            <div className="border border-purple-400 rounded-2xl shadow-lg p-6 md:p-8 bg-black/40 backdrop-blur-lg hover:scale-105 transition-transform duration-300 flex flex-col justify-between">
+              <div>
+                <div className="flex items-center gap-2 mb-3 text-purple-300">
+                  <FaCode className="text-2xl" />
+                  <h3 className="text-lg font-semibold">Certification</h3>
+                </div>
+                <h4 className="font-semibold text-white/90 text-lg mb-1">Oracle Job Readiness Certification</h4>
+                <div className="flex items-center gap-3 text-white/70 mb-3 text-sm">
+                  <SlCalender className="text-purple-400" />
+                  <span>Team Everest for Girls</span>
+                </div>
+                <p className="text-white/80 mb-3 text-sm md:text-base lg:text-lg leading-relaxed font-normal">
+                  Successfully completed a rigorous 20-day job readiness training program, receiving a stipend and toolkit.
+                </p>
+              </div>
+              <p className="text-purple-400 font-bold text-base mt-2">Certified</p>
             </div>
           </div>
         </section>
-       <section id="project" className="min-h-screen bg-black text-white ">
-        <div className="flex justify-center mb-10">
+      <section id="project" className="min-h-screen bg-black text-white py-16">
+        <div className="flex justify-center mb-12">
           <button className="border-2 py-2 px-6 rounded-full text-white flex items-center">
             <FaProjectDiagram className="text-4xl md:text-3xl mr-2 text-purple-400"  />
-            <span className="text-sm md:text-base lg:text-lg">PROJECT</span>
+            <span className="text-sm md:text-base lg:text-lg font-semibold">PROJECTS</span>
           </button>
         </div>
-        <div className="flex flex-col gap-10 p-6">
-          <div className="flex flex-col md:flex-row justify-center items-center gap-10">
-             <div className="border-2 border-purple-300 rounded-xl shadow-lg p-6 max-w-sm hover:scale-105 transition-transform duration-300">
-              <Image 
-                src="/logo.png"
-                alt="logo"
-                width={150}
-                height={150}
-                className="mx-auto rounded-full"
-              />
-              <h3 className="font-bold text-violet-400 text-center text-xl">Yummy's Kitchen</h3>
-              <p className="mt-4 text-gray-200 text-xl">
-                Yummy’s Kitchen is a visually appealing, frontend-only web project built using HTML and CSS. It showcases a clean and modern design for a culinary brand, featuring key pages such as Order, Offer, and Contact. The project focuses on user-friendly layouts, responsive design, and attractive styling.
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto px-6">
+          {/* Card 1: Food Bridge */}
+          <div className="border-2 border-purple-300 rounded-xl shadow-lg p-6 hover:scale-105 transition-transform duration-300 bg-black/40 backdrop-blur-lg flex flex-col justify-between">
+            <div>
+              <div className="w-40 h-40 mx-auto rounded-full overflow-hidden border border-purple-800">
+                <Image
+                  src="/OIP (2).jpg"
+                  alt="Food Bridge Logo"
+                  width={160}
+                  height={160}
+                  className="object-cover w-40 h-40 rounded-full"
+                />
+              </div>
+              <h3 className="font-bold text-violet-400 text-center text-xl mt-4">Food Bridge</h3>
+              <p className="font-normal text-gray-300 text-sm md:text-base lg:text-lg leading-relaxed mt-4">
+                Food Bridge is an AI-powered food donation platform connecting donors, NGOs, and volunteers. It optimizes food distribution and community engagement by implementing features like live map tracking, distance calculation, AI food freshness detection, and a user rating system.
               </p>
+            </div>
             <div className="flex justify-center gap-4 mt-6">
               <a  
-                href="https://github.com/pranitha080511/Yummy-s-kitchen.git" 
+                href="https://github.com/pranitha080511/Food-Bridge" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="border-2 py-2 px-5 rounded-full text-purple-400 hover:bg-purple-400 hover:text-white transition duration-300 cursor-pointer text-center"
+                className="border-2 py-2 px-5 rounded-full text-purple-400 hover:bg-purple-400 hover:text-white transition duration-300 cursor-pointer text-center text-sm font-semibold"
               >
                 View Source Code
               </a>
-              <a 
-                href="https://pranitha080511.github.io/Yummy-s-kitchen/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="border-2 py-2 px-5 rounded-full text-purple-400 hover:bg-purple-400 hover:text-white transition duration-300 cursor-pointer text-center"
-              >
-                Live Demo
-              </a>
             </div>
           </div>
-          <div className="border-2 border-purple-300 rounded-xl shadow-lg p-6 max-w-sm hover:scale-105 transition-transform duration-300">
-            <Image 
-              src="/bg.jpg"
-              alt="logo2"
-              width={150}
-              height={150}
-              className="mx-auto rounded-full"
-            />
-            <h3 className="font-bold text-violet-400 text-center text-xl mt-4">DNP GLOW</h3>
-            <p className="mt-4 text-gray-200 text-xl">
-              DNP Glow is a modern, responsive web application built using React JS and Tailwind CSS, designed for a beauty and skincare brand. The project includes pages such as Home, Products, Offers, and Contact, with a focus on dynamic UI components, clean layouts, and interactive design elements.
-            </p>
-            <div className="flex justify-center gap-4 mt-6">
-              <a  
-                href="https://github.com/pranitha080511/DNP-glow.git" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="border-2 py-2 px-5 rounded-full text-purple-400 hover:bg-purple-400 hover:text-white transition duration-300 cursor-pointer text-center"
-              >
-                View Source Code
-              </a>
-              <a 
-                href="https://react-project-sage-rho.vercel.app/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="border-2 py-2 px-5 rounded-full text-purple-400 hover:bg-purple-400 hover:text-white transition duration-300 cursor-pointer text-center"
-              >
-                Live Demo
-              </a>
+
+          {/* Card 2: TribalEarth 360 */}
+          <div className="border-2 border-purple-300 rounded-xl shadow-lg p-6 hover:scale-105 transition-transform duration-300 bg-black/40 backdrop-blur-lg flex flex-col justify-between">
+            <div>
+              <div className="w-40 h-40 mx-auto rounded-full overflow-hidden border border-purple-800">
+                <Image
+                  src="/logo.jpg"
+                  alt="TribalEarth 360 Logo"
+                  width={160}
+                  height={160}
+                  className="object-cover w-40 h-40 rounded-full"
+                />
+              </div>
+              <h3 className="font-bold text-violet-400 text-center text-xl mt-4">TribalEarth 360</h3>
+              <p className="font-normal text-gray-300 text-sm md:text-base lg:text-lg leading-relaxed mt-4">
+                Tribal Earth360 is a data-driven web application focused on forest rights awareness and sustainable land management. It uses AI-based asset mapping to visualize resources and land usage, providing insights for tribal communities and policymakers through an interactive and responsive design.
+              </p>
             </div>
-          </div>
-        </div>
-        <div className="flex flex-col  md:flex-row justify-center items-center gap-10">
-          <div className="border-2 border-purple-300 rounded-xl shadow-lg p-6 max-w-sm hover:scale-105 transition-transform duration-300">
-            <Image 
-              src="/logo.jpg"
-              alt="logo3"
-              width={150}
-              height={150}
-              className="mx-auto rounded-full"
-            />
-            <h3 className="font-bold text-violet-400 text-center text-xl mt-4">TribalEarth 360</h3>
-            <p className="mt-4 text-gray-200 text-xl">
-              Tribal Earth360 is a data-driven web application focused on forest rights awareness and sustainable land management. It uses AI-based asset mapping to visualize resources and land usage, providing insights for tribal communities and policymakers through an interactive and responsive design.
-            </p>
             <div className="flex justify-center gap-4 mt-6">
               <a  
                 href="https://github.com/DharunNagavel/Tribal-Earth-360.git" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="border-2 py-2 px-5 rounded-full text-purple-400 hover:bg-purple-400 hover:text-white transition duration-300 cursor-pointer text-center"
+                className="border-2 py-2 px-5 rounded-full text-purple-400 hover:bg-purple-400 hover:text-white transition duration-300 cursor-pointer text-center text-sm font-semibold"
               >
                 View Source Code
               </a>
@@ -526,33 +624,36 @@ export default function Home() {
                 href="https://tribal-earth-360.vercel.app/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="border-2 py-2 px-5 rounded-full text-purple-400 hover:bg-purple-400 hover:text-white transition duration-300 cursor-pointer text-center"
+                className="border-2 py-2 px-5 rounded-full text-purple-400 hover:bg-purple-400 hover:text-white transition duration-300 cursor-pointer text-center text-sm font-semibold"
               >
                 Live Demo
               </a>
             </div>
           </div>
-          <div className="border-2 border-purple-300 rounded-xl shadow-lg p-6 max-w-sm hover:scale-105 transition-transform duration-300">
-            <div className="w-40 h-40 mx-auto rounded-full overflow-hidden">
-              <Image
-              src="/patient.png"
-              alt="PatientX Logo"
-              width={160}
-              height={160}
-              className="object-cover w-40 h-40 rounded-full"
-              />
 
+          {/* Card 3: PatientX */}
+          <div className="border-2 border-purple-300 rounded-xl shadow-lg p-6 hover:scale-105 transition-transform duration-300 bg-black/40 backdrop-blur-lg flex flex-col justify-between">
+            <div>
+              <div className="w-40 h-40 mx-auto rounded-full overflow-hidden border border-purple-800">
+                <Image
+                  src="/patient.png"
+                  alt="PatientX Logo"
+                  width={160}
+                  height={160}
+                  className="object-cover w-40 h-40 rounded-full"
+                />
+              </div>
+              <h3 className="font-bold text-violet-400 text-center text-xl mt-4">PatientX</h3>
+              <p className="font-normal text-gray-300 text-sm md:text-base lg:text-lg leading-relaxed mt-4">
+                PatientX is a modern, responsive web application built using React.js, Tailwind CSS, and Node.js. The platform is designed to provide a seamless experience for managing patient records, appointments, and healthcare workflows. It features an intuitive user interface.
+              </p>
             </div>
-            <h3 className="font-bold text-violet-400 text-center text-xl mt-4">PatientX</h3>
-            <p className="mt-4 text-gray-200 text-xl">
-             PatientX is a modern, responsive web application built using React.js, Tailwind CSS, and Node.js. The platform is designed to provide a seamless experience for managing patient records, appointments, and healthcare workflows.It features an intuitive user interface.
-            </p>
             <div className="flex justify-center gap-4 mt-6">
               <a  
                 href="https://github.com/DharunNagavel/PatientX.git" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="border-2 py-2 px-5 rounded-full text-purple-400 hover:bg-purple-400 hover:text-white transition duration-300 cursor-pointer text-center"
+                className="border-2 py-2 px-5 rounded-full text-purple-400 hover:bg-purple-400 hover:text-white transition duration-300 cursor-pointer text-center text-sm font-semibold"
               >
                 View Source Code
               </a>
@@ -560,14 +661,87 @@ export default function Home() {
                 href="https://react-project-sage-rho.vercel.app/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="border-2 py-2 px-5 rounded-full text-purple-400 hover:bg-purple-400 hover:text-white transition duration-300 cursor-pointer text-center"
+                className="border-2 py-2 px-5 rounded-full text-purple-400 hover:bg-purple-400 hover:text-white transition duration-300 cursor-pointer text-center text-sm font-semibold"
+              >
+                Live Demo
+              </a>
+            </div>
+          </div>
+
+          {/* Card 4: DNP GLOW */}
+          <div className="border-2 border-purple-300 rounded-xl shadow-lg p-6 hover:scale-105 transition-transform duration-300 bg-black/40 backdrop-blur-lg flex flex-col justify-between">
+            <div>
+              <div className="w-40 h-40 mx-auto rounded-full overflow-hidden border border-purple-800">
+                <Image
+                  src="/bg.jpg"
+                  alt="DNP GLOW Logo"
+                  width={160}
+                  height={160}
+                  className="object-cover w-40 h-40 rounded-full"
+                />
+              </div>
+              <h3 className="font-bold text-violet-400 text-center text-xl mt-4">DNP GLOW</h3>
+              <p className="font-normal text-gray-300 text-sm md:text-base lg:text-lg leading-relaxed mt-4">
+                DNP Glow is a modern, responsive web application built using React JS and Tailwind CSS, designed for a beauty and skincare brand. The project includes pages such as Home, Products, Offers, and Contact, with a focus on dynamic UI components, clean layouts, and interactive design elements.
+              </p>
+            </div>
+            <div className="flex justify-center gap-4 mt-6">
+              <a  
+                href="https://github.com/pranitha080511/DNP-glow.git" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="border-2 py-2 px-5 rounded-full text-purple-400 hover:bg-purple-400 hover:text-white transition duration-300 cursor-pointer text-center text-sm font-semibold"
+              >
+                View Source Code
+              </a>
+              <a 
+                href="https://react-project-sage-rho.vercel.app/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="border-2 py-2 px-5 rounded-full text-purple-400 hover:bg-purple-400 hover:text-white transition duration-300 cursor-pointer text-center text-sm font-semibold"
+              >
+                Live Demo
+              </a>
+            </div>
+          </div>
+
+          {/* Card 5: Yummy's Kitchen */}
+          <div className="border-2 border-purple-300 rounded-xl shadow-lg p-6 hover:scale-105 transition-transform duration-300 bg-black/40 backdrop-blur-lg flex flex-col justify-between">
+            <div>
+              <div className="w-40 h-40 mx-auto rounded-full overflow-hidden border border-purple-800">
+                <Image
+                  src="/logo.png"
+                  alt="Yummy's Kitchen Logo"
+                  width={160}
+                  height={160}
+                  className="object-cover w-40 h-40 rounded-full"
+                />
+              </div>
+              <h3 className="font-bold text-violet-400 text-center text-xl mt-4">Yummy's Kitchen</h3>
+              <p className="font-normal text-gray-300 text-sm md:text-base lg:text-lg leading-relaxed mt-4">
+                Yummy’s Kitchen is a visually appealing, frontend-only web project built using HTML and CSS. It showcases a clean and modern design for a culinary brand, featuring key pages such as Order, Offer, and Contact. The project focuses on user-friendly layouts, responsive design, and attractive styling.
+              </p>
+            </div>
+            <div className="flex justify-center gap-4 mt-6">
+              <a  
+                href="https://github.com/pranitha080511/Yummy-s-kitchen.git" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="border-2 py-2 px-5 rounded-full text-purple-400 hover:bg-purple-400 hover:text-white transition duration-300 cursor-pointer text-center text-sm font-semibold"
+              >
+                View Source Code
+              </a>
+              <a 
+                href="https://pranitha080511.github.io/Yummy-s-kitchen/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="border-2 py-2 px-5 rounded-full text-purple-400 hover:bg-purple-400 hover:text-white transition duration-300 cursor-pointer text-center text-sm font-semibold"
               >
                 Live Demo
               </a>
             </div>
           </div>
         </div>
-      </div>
       </section>
       <section id="contact" className="  text-white px-6 py-16">
         <div className="flex justify-center mb-12">

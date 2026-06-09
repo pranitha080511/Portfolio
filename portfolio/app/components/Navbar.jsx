@@ -11,6 +11,7 @@ const Navbar = () => {
         <ul className="hidden md:flex gap-8 text-lg">
           <li><a href="#home" className=" hover:text-purple-400">Home</a></li>
           <li><a href="#about" className="hover:text-purple-400">About</a></li>
+          <li><a href="#education" className="hover:text-purple-400">Education</a></li>
           <li><a href="#skills" className="hover:text-purple-400">Skills</a></li>
           <li><a href="#internship" className="hover:text-purple-400">Internship</a></li>
           <li><a href="#experience" className="hover:text-purple-400">Achievements</a></li>
@@ -28,6 +29,7 @@ const Navbar = () => {
         <ul className="flex flex-col items-center bg-black pb-6 md:hidden gap-6 text-lg">
           <li><a href="#home" onClick={() => setIsOpen(false)}>Home</a></li>
           <li><a href="#about" onClick={() => setIsOpen(false)}>About</a></li>
+          <li><a href="#education" onClick={() => setIsOpen(false)}>Education</a></li>
           <li><a href="#skills" onClick={() => setIsOpen(false)}>Skills</a></li>
           <li><a href="#internship" onClick={() => setIsOpen(false)}>Internship</a></li>
           <li><a href="#experience" onClick={() => setIsOpen(false)}>Achievements</a></li>
