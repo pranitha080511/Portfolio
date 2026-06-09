@@ -5,10 +5,13 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  background-color: transparent;
+}
+
 /* Set global font and background color */
 * {
   font-family: Outfit, sans-serif;
-  background-color: black;
 }
 
 /* Optional: ensure sections scroll correctly under fixed navbar */

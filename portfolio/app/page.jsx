@@ -3,6 +3,7 @@ import React, { useRef, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Image from "next/image";
+import ThreeBackground from "./components/ThreeBackground";
 
 import { CgProfile } from "react-icons/cg";
 import { RiGlobalFill } from "react-icons/ri";
@@ -142,10 +143,9 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <section
-  id="home"
-  className="min-h-screen flex flex-col md:flex-row justify-center items-center bg-black text-white px-6 py-16 md:py-0"
->
+      <ThreeBackground />
+      <div className="relative z-10"> 
+      <section id="home" className="min-h-screen flex flex-col md:flex-row justify-center items-center bg-transparent text-white px-6 py-16 md:py-0">
   {/* Photo on Left with Animated Violet Bg Lines */}
   <div className="md:w-1/2 flex justify-center mb-8 md:mb-0 relative py-10">
     <div className="relative group flex justify-center items-center">
@@ -253,7 +253,7 @@ export default function Home() {
       </section>
 
       {/* Education Section */}
-      <section id="education" className="px-4 md:px-10 lg:px-14 py-10 bg-black text-white">
+      <section id="education" className="px-4 md:px-10 lg:px-14 py-10 bg-transparent text-white">
         <div className="flex justify-center mb-10">
           <button className="border-2 py-2 px-6 rounded-full text-white flex items-center">
             <FaGraduationCap className="text-4xl md:text-3xl mr-2 text-purple-400" />
@@ -320,7 +320,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section id="skills" className="min-h-screen bg-black text-white px-6 py-16">
+      <section id="skills" className="min-h-screen bg-transparent text-white px-6 py-16">
         <div className="flex justify-center mb-12">
           <button className="border-2 py-3 px-7 rounded-full text-white flex items-center">
             <SiSkillshare className="text-4xl md:text-3xl mr-2 text-purple-400"  />
@@ -335,7 +335,8 @@ export default function Home() {
           ))}
         </div>
       </section>
-        <section id="internship" className="bg-black text-white px-6 pt-16 pb-30">
+        <section id="internship" className="bg-transparent text-white px-6 pt-16 pb-30">
+
    <div className="flex justify-center mb-10">
      <button className="border-2 py-2 px-6 rounded-full text-white flex items-center">
        <IoLogoHtml5 className="text-4xl md:text-3xl mr-2 text-purple-400" />
@@ -412,7 +413,7 @@ export default function Home() {
      </div>
    </div>
  </section>
-        <section id="experience" className="bg-black text-white px-6 pt-16 pb-30">
+        <section id="experience" className="bg-transparent text-white px-6 pt-16 pb-30">
           <div className="flex justify-center mb-10">
           <button className="border-2 py-2 px-6 rounded-full text-white flex items-center">
             <GiJourney className="text-4xl md:text-3xl mr-2 text-purple-400"  />
@@ -556,7 +557,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-      <section id="project" className="min-h-screen bg-black text-white py-16">
+      <section id="project" className="min-h-screen bg-transparent text-white py-16">
         <div className="flex justify-center mb-12">
           <button className="border-2 py-2 px-6 rounded-full text-white flex items-center">
             <FaProjectDiagram className="text-4xl md:text-3xl mr-2 text-purple-400"  />
@@ -842,6 +843,7 @@ export default function Home() {
         </div>
       </section>
       <Footer />
+    </div>
     </>
   );
 }
