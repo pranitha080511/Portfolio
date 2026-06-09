@@ -275,7 +275,7 @@ export default function Home() {
             <div className="mt-4 pt-4 border-t border-purple-900/30">
               <div className="flex items-center gap-3 text-white/70 mb-2 text-sm md:text-base">
                 <SlCalender className="text-purple-400" />
-                <span>2022 – 2026</span>
+                <span>2023 – 2026</span>
               </div>
               <p className="text-purple-400 font-semibold text-lg">CGPA: 9.1 / 10 <span className="text-xs md:text-sm text-gray-400 font-normal">(Till 5th Semester)</span></p>
             </div>
