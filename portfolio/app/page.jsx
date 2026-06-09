@@ -183,7 +183,7 @@ export default function Home() {
         REACH OUT
       </a>
       <a
-        href="/Pranitha_Resume.pdf" 
+        href="/prani_final_resume.pdf" 
         download="Pranitha_Resume.pdf"
         className="border-2 py-2 px-5 rounded-full text-purple-400 hover:text-white transition duration-300 cursor-pointer text-center"
       >
@@ -466,29 +466,7 @@ export default function Home() {
               <p className="text-purple-400 font-bold text-base mt-2">Won 3rd Prize</p>
             </div>
 
-            {/* Card 3 */}
-            <div className="border border-purple-400 rounded-2xl shadow-lg p-6 md:p-8 bg-black/40 backdrop-blur-lg hover:scale-105 transition-transform duration-300 flex flex-col justify-between">
-              <div>
-                <div className="flex items-center gap-2 mb-3 text-purple-300">
-                  <FaProjectDiagram className="text-2xl" />
-                  <h3 className="text-lg font-semibold">Hackathon</h3>
-                </div>
-                <h4 className="font-semibold text-white/90 text-lg mb-1">IIIT Bhopal (ETHIndia Track)</h4>
-                <div className="flex items-center gap-3 text-white/70 mb-3 text-sm">
-                  <SlCalender className="text-purple-400" />
-                  <span>27 September 2025</span>
-                </div>
-                <div className="flex items-center gap-3 text-white/70 mb-3 text-sm">
-                  <FaLocationDot className="text-purple-400" />
-                  <span>Bhopal (Virtual)</span>
-                </div>
-                <p className="text-white/80 mb-3 text-sm md:text-base lg:text-lg leading-relaxed font-normal">
-                  Secured 1st Prize in the ETHIndia track, winning a cash award of $100 for outstanding project implementation.
-                </p>
-              </div>
-              <p className="text-purple-400 font-bold text-base mt-2">Won 1st Prize</p>
-            </div>
-
+            
             {/* Card 4 */}
             <div className="border border-purple-400 rounded-2xl shadow-lg p-6 md:p-8 bg-black/40 backdrop-blur-lg hover:scale-105 transition-transform duration-300 flex flex-col justify-between">
               <div>
@@ -526,6 +504,37 @@ export default function Home() {
               </div>
               <p className="text-purple-400 font-bold text-base mt-2">Finalist</p>
             </div>
+            
+            {/* Card: Research Paper */}
+<div className="border border-purple-400 rounded-2xl shadow-lg p-6 md:p-8 bg-black/40 backdrop-blur-lg hover:scale-105 transition-transform duration-300 flex flex-col justify-between">
+  <div>
+    <div className="flex items-center gap-2 mb-3 text-purple-300">
+      <FaCode className="text-2xl" />
+      <h3 className="text-lg font-semibold">Research Paper</h3>
+    </div>
+    <h4 className="font-semibold text-white/90 text-lg mb-1">
+      International Research Journal of Advanced Engineering and Management
+    </h4>
+    <div className="flex items-center gap-3 text-white/70 mb-3 text-sm">
+      <FaLocationDot className="text-purple-400" />
+      <span>International Conference</span>
+    </div>
+    <p className="text-white/80 mb-3 text-sm md:text-base lg:text-lg leading-relaxed font-normal">
+      Published and presented a peer-reviewed research paper at an international conference, featured in the International Research Journal of Advanced Engineering and Management (IRJAEM).
+    </p>
+  </div>
+  <div className="flex items-center justify-between mt-2">
+    <p className="text-purple-400 font-bold text-base">Published</p>
+    <a
+      href="https://goldncloudpublications.com/index.php/irjaem/article/view/1336"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="border border-purple-400 py-1 px-4 rounded-full text-purple-400 hover:bg-purple-400 hover:text-white transition duration-300 text-sm font-semibold"
+    >
+      View Paper
+    </a>
+  </div>
+</div>
 
             {/* Card 6 */}
             <div className="border border-purple-400 rounded-2xl shadow-lg p-6 md:p-8 bg-black/40 backdrop-blur-lg hover:scale-105 transition-transform duration-300 flex flex-col justify-between">
