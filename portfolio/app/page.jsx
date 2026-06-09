@@ -3,6 +3,7 @@ import React, { useRef, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Image from "next/image";
+
 import { CgProfile } from "react-icons/cg";
 import { RiGlobalFill } from "react-icons/ri";
 import { FaCode, FaLightbulb, FaExplosion } from "react-icons/fa6";
