@@ -28,16 +28,16 @@ export default function Home() {
     { name: "TypeScript", percent: 85 },
     { name: "JavaScript", percent: 88 },
     { name: "Java", percent: 80 },
-    { name: "Python", percent: 70 },
-    { name: "C", percent: 68 },
+    { name: "Python", percent: 50 },
+    { name: "C", percent: 70 },
     { name: "React.js", percent: 88 },
     { name: "Next.js", percent: 85 },
     { name: "Node.js", percent: 82 },
     { name: "Express.js", percent: 80 },
-    { name: "Spring Boot", percent: 75 },
+    { name: "Spring Boot", percent: 70 },
     { name: "MySQL", percent: 82 },
-    { name: "PostgreSQL", percent: 78 },
-    { name: "MongoDB", percent: 83 },
+    { name: "PostgreSQL", percent: 80 },
+    { name: "MongoDB", percent: 75 },
     { name: "Tailwind CSS", percent: 90 },
     { name: "Bootstrap", percent: 88 },
     { name: "GSAP", percent: 65 },
@@ -183,7 +183,7 @@ export default function Home() {
         REACH OUT
       </a>
       <a
-        href="/PranithaSaravanan_Resume.pdf"
+        href="/public/Pranitha_Resume.pdf"
         download="Pranitha_Resume.pdf"
         className="border-2 py-2 px-5 rounded-full text-purple-400 hover:text-white transition duration-300 cursor-pointer text-center"
       >
@@ -376,11 +376,6 @@ export default function Home() {
              <li>Worked closely with mentors to meet project deadlines and improve rendering efficiency.</li>
            </ul>
          </div>
-         <div className="flex flex-wrap gap-2 mt-6">
-           <span className="bg-purple-600 px-3 py-1 rounded-full text-xs md:text-sm font-semibold">MERN Stack</span>
-           <span className="bg-purple-600 px-3 py-1 rounded-full text-xs md:text-sm font-semibold">HTML & CSS</span>
-           <span className="bg-purple-600 px-3 py-1 rounded-full text-xs md:text-sm font-semibold">JavaScript</span>
-         </div>
        </div>
 
        {/* Card 2: Cognifyz Technologies */}
@@ -411,11 +406,6 @@ export default function Home() {
              <li>Delivered all assigned milestones within a 1-month internship period.</li>
              <li>Improved web application performance and user experience.</li>
            </ul>
-         </div>
-         <div className="flex flex-wrap gap-2 mt-6">
-           <span className="bg-purple-600 px-3 py-1 rounded-full text-xs md:text-sm font-semibold">MERN Stack</span>
-           <span className="bg-purple-600 px-3 py-1 rounded-full text-xs md:text-sm font-semibold">Redux</span>
-           <span className="bg-purple-600 px-3 py-1 rounded-full text-xs md:text-sm font-semibold">API Integration</span>
          </div>
        </div>
 
