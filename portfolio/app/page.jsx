@@ -24,122 +24,125 @@ import { gsap } from "gsap";
 
 const purple = "#a259ff";
 
-export default function Home() {
-  const skills = [
-    { name: "TypeScript", percent: 85 },
-    { name: "JavaScript", percent: 88 },
-    { name: "Java", percent: 80 },
-    { name: "Python", percent: 50 },
-    { name: "C", percent: 70 },
-    { name: "React.js", percent: 88 },
-    { name: "Next.js", percent: 85 },
-    { name: "Node.js", percent: 82 },
-    { name: "Express.js", percent: 80 },
-    { name: "Spring Boot", percent: 70 },
-    { name: "MySQL", percent: 82 },
-    { name: "PostgreSQL", percent: 80 },
-    { name: "MongoDB", percent: 75 },
-    { name: "Tailwind CSS", percent: 90 },
-    { name: "Bootstrap", percent: 88 },
-    { name: "GSAP", percent: 65 },
-    { name: "Data Structures & Algorithms (DSA)", percent: 80 },
-    { name: "Object-Oriented Programming (OOP)", percent: 83 },
-    { name: "Database Management Systems (DBMS)", percent: 84 },
-    { name: "Git & GitHub", percent: 80 },
-  ];
+gsap.registerPlugin(ScrollTrigger);
 
-  gsap.registerPlugin(ScrollTrigger);
+const SkillItem = ({ skill }) => {
+  const barRef = useRef(null);
+  const bubbleRef = useRef(null);
 
-        const barRefs = useRef([]);
-        const bubbleRefs = useRef([]);
+  useEffect(() => {
+    const bar = barRef.current;
+    const bubble = bubbleRef.current;
 
-        const SkillItem = ({ skill, index }) => {
-          const barRef = useRef(null);
-          const bubbleRef = useRef(null);
-
-          useEffect(() => {
-            barRefs.current[index] = barRef.current;
-            bubbleRefs.current[index] = bubbleRef.current;
-          }, [index]);
-
-          return (
-            <div className="w-full mb-6">
-              <p className="font-medium text-xl mb-2">{skill.name}</p>
-              <div className="relative w-full h-4 bg-gray-900 rounded-full border border-gray-700">
-                <div
-                  ref={barRef}
-                  className="h-full rounded-full absolute left-0 top-0"
-                  style={{
-                    width: 0,
-                    background: purple,
-                    transition: "background 0.3s",
-                  }}
-                />
-                <div
-                  ref={bubbleRef}
-                  className="absolute top-1/2 left-0 flex items-center justify-center rounded-full font-bold text-lg select-none"
-                  style={{
-                    width: "35px",
-                    height: "35px",
-                    background: "#15161f",
-                    color: "white",
-                    border: `2px solid white`,
-                    boxShadow: "0 2px 8px rgba(0,0,0,0.18)",
-                    transform: "translateY(-50%) scale(0.82)",
-                    left: 0,
-                    zIndex: 2,
-                    pointerEvents: "none",
-                  }}
-                >
-                  0%
-                </div>
-              </div>
-            </div>
-          );
-        };
-
-        useEffect(() => {
-          skills.forEach((skill, index) => {
-            const bar = barRefs.current[index];
-            const bubble = bubbleRefs.current[index];
-
-            if (bar && bubble) {
-              ScrollTrigger.create({
-                trigger: bar.parentElement, 
-                start: "top 80%", 
-                onEnter: () => {
-                  // animate bar
-                  gsap.to(bar, {
-                    width: `${skill.percent}%`,
-                    duration: 1.2,
-                    ease: "power3.out",
-                    delay: index * 0.1,
-                  });
-
-                  // animate bubble
-                  gsap.to(bubble, {
-                    left: `calc(${skill.percent}% - 15px)`,
-                    duration: 1.2,
-                    ease: "power3.out",
-                    delay: index * 0.1,
-                    onUpdate: function () {
-                      const progress = gsap.getProperty(bar, "width");
-                      let containerW = bar.parentElement.offsetWidth || 1;
-                      let percent =
-                        (parseFloat(bar.style.width || 0) / containerW) * skill.percent;
-                      percent = isNaN(percent) ? 0 : Math.round(percent);
-                      bubble.textContent = `${percent}%`;
-                    },
-                    onComplete: function () {
-                      bubble.textContent = `${skill.percent}%`;
-                    },
-                  });
-                },
-                once: true, 
-              });
-            }
+    if (bar && bubble) {
+      ScrollTrigger.create({
+        trigger: bar.parentElement,
+        start: "top 85%",
+        onEnter: () => {
+          gsap.to(bar, {
+            width: `${skill.percent}%`,
+            duration: 1.2,
+            ease: "power3.out",
           });
-        }, [skills]);
+
+          gsap.to(bubble, {
+            left: `calc(${skill.percent}% - 15px)`,
+            duration: 1.2,
+            ease: "power3.out",
+            onUpdate: function () {
+              const progress = gsap.getProperty(bar, "width");
+              let containerW = bar.parentElement.offsetWidth || 1;
+              let percent = (parseFloat(bar.style.width || 0) / containerW) * skill.percent;
+              percent = isNaN(percent) ? 0 : Math.round(percent);
+              bubble.textContent = `${percent}%`;
+            },
+            onComplete: function () {
+              bubble.textContent = `${skill.percent}%`;
+            },
+          });
+        },
+        once: true,
+      });
+    }
+  }, [skill.percent]);
+
+  return (
+    <div className="w-full mb-6">
+      <p className="font-medium text-sm text-purple-200 mb-2">{skill.name}</p>
+      <div className="relative w-full h-3 bg-gray-900 rounded-full border border-gray-700">
+        <div
+          ref={barRef}
+          className="h-full rounded-full absolute left-0 top-0"
+          style={{ width: 0, background: purple, transition: "background 0.3s" }}
+        />
+        <div
+          ref={bubbleRef}
+          className="absolute top-1/2 left-0 flex items-center justify-center rounded-full font-bold text-xs select-none"
+          style={{
+            width: "30px", height: "30px", background: "#15161f", color: "white",
+            border: `2px solid white`, boxShadow: "0 2px 8px rgba(0,0,0,0.18)",
+            transform: "translateY(-50%) scale(0.85)", left: 0, zIndex: 2, pointerEvents: "none"
+          }}
+        >
+          0%
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default function Home() {
+  const skillCategories = [
+    {
+      title: "Programming Languages",
+      skills: [
+        { name: "TypeScript", percent: 85 },
+        { name: "JavaScript", percent: 88 },
+        { name: "Java", percent: 80 },
+        { name: "Python", percent: 50 },
+        { name: "C", percent: 70 },
+      ]
+    },
+    {
+      title: "Technologies & Frameworks",
+      skills: [
+        { name: "React.js", percent: 88 },
+        { name: "Next.js", percent: 85 },
+        { name: "Node.js", percent: 82 },
+        { name: "Express.js", percent: 80 },
+        { name: "Tailwind CSS", percent: 90 },
+        { name: "Bootstrap", percent: 88 },
+        { name: "GSAP", percent: 65 },
+        { name: "Spring Boot", percent: 70 },
+      ]
+    },
+    {
+      title: "Databases",
+      skills: [
+        { name: "MySQL", percent: 82 },
+        { name: "PostgreSQL", percent: 80 },
+        { name: "MongoDB", percent: 75 },
+      ]
+    },
+    {
+      title: "Tools",
+      skills: [
+        { name: "VS Code", percent: 90 },
+        { name: "Git", percent: 85 },
+        { name: "GitHub", percent: 85 },
+        { name: "Figma", percent: 75 },
+        { name: "Google Colab", percent: 80 },
+      ]
+    },
+    {
+      title: "Core Concepts",
+      skills: [
+        { name: "Data Structures & Algorithms (DSA)", percent: 80 },
+        { name: "Object-Oriented Programming (OOP)", percent: 83 },
+        { name: "Database Management Systems (DBMS)", percent: 84 },
+      ]
+    }
+  ];
   return (
     <>
       <Navbar />
@@ -329,9 +332,16 @@ export default function Home() {
             </span>
           </button>
         </div>
-        <div className="w-full max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-12">
-          {skills.map((skill, index) => (
-            <SkillItem key={index} skill={skill} index={index} />
+        <div className="w-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {skillCategories.map((category, index) => (
+            <div key={index} className="border border-purple-400 rounded-2xl shadow-lg p-6 md:p-8 bg-black/40 backdrop-blur-lg hover:scale-105 transition-transform duration-300 flex flex-col">
+              <h3 className="text-xl font-bold text-violet-400 mb-6 text-center">{category.title}</h3>
+              <div className="flex flex-col w-full px-2">
+                {category.skills.map((skill, idx) => (
+                  <SkillItem key={idx} skill={skill} />
+                ))}
+              </div>
+            </div>
           ))}
         </div>
       </section>
