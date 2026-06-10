@@ -12,7 +12,7 @@ const Footer = () => {
               Pranitha Saravanan
             </h3>
             <p className="text-sm leading-relaxed text-gray-400">
-              I’m a passionate Full-Stack Developer and database management enthusiast. I specialize in MERN stack development, building scalable web platforms, integrating modern frameworks, and developing secure backend architectures.
+              I’m a passionate Full-Stack Developer and database management enthusiast. I specialize in PERN stack development, building scalable web platforms, integrating modern frameworks, and developing secure backend architectures.
             </p>
           </div>
           <div>
