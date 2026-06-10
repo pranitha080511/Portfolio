@@ -160,7 +160,7 @@ export default function Home() {
           alt="Profile"
           width={400}
           height={400}
-          className="object-cover w-72 h-72 md:w-96 md:h-96 transition-transform duration-500 group-hover:scale-105"
+          className="object-cover w-56 h-56 sm:w-72 sm:h-72 md:w-96 md:h-96 transition-transform duration-500 group-hover:scale-105"
         />
       </div>
     </div>
@@ -169,10 +169,10 @@ export default function Home() {
   {/* Content on Right */}
   <div className="md:w-1/2 flex flex-col justify-center text-center md:text-left md:pl-12">
     <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-      Hi, I'm <span className="text-purple-400">Pranitha Saravanan</span>
+      Hi, I'm <span className="text-purple-400">Pranitha S</span>
     </h1>
     <p className="text-gray-300 text-base sm:text-lg md:text-xl mb-6 max-w-xl">
-      I am a skilled Full-Stack Developer and database management enthusiast with strong problem-solving and algorithmic abilities. I specialize in MERN stack development, building scalable web platforms, integrating modern frameworks, and developing secure backend architectures, while bringing a continuous learning mindset to software development.
+      I am a skilled Full-Stack Developer and database management enthusiast with strong problem-solving and algorithmic abilities. I specialize in PERN stack development, building scalable web platforms, integrating modern frameworks, and developing secure backend architectures, while bringing a continuous learning mindset to software development.
     </p>
 
     <div className="flex flex-col sm:flex-row gap-3">
@@ -201,52 +201,52 @@ export default function Home() {
         </div>
 
         <div className="flex flex-col md:flex-row justify-between gap-8">
-          <div className="flex-1">
-            <h3 className="text-white border-4 border-b-0 p-4 md:p-5 rounded-t-2xl">
-              <RiGlobalFill className="text-3xl md:text-4xl inline-block text-violet-400" />
-              <span className="inline-block ml-2 text-lg md:text-xl lg:text-2xl align-middle text-violet-400">
-                My Journey
-              </span>
-            </h3>
-            <p className="text-white border-4 border-t-0 p-4 md:p-5 rounded-b-2xl text-sm md:text-base lg:text-lg leading-relaxed">
-              I'm Pranitha Saravanan from Madurai, currently pursuing my Bachelor's degree in Computer Science and Engineering at Kamaraj College of Engineering and Technology. My journey in software engineering is driven by a deep passion for full-stack web development, database management, and solving complex algorithmic challenges. Over the years, I have built and deployed scalable web applications, integrated secure backend architectures, and worked extensively with database management systems. With a continuous learning mindset, I thrive in fast-paced environments, actively participate in hackathons to build innovative projects, and constantly explore new frameworks and tools. Looking ahead, I am eager to leverage my technical expertise and collaborative spirit to contribute to innovative software development roles.
-            </p>
+          <div className="flex-1 border border-purple-400 rounded-2xl shadow-lg p-6 md:p-8 bg-black/40 backdrop-blur-lg hover:scale-105 transition-transform duration-300 flex flex-col justify-center h-full">
+            <div>
+              <div className="flex items-center gap-2 mb-3 text-purple-300">
+                <RiGlobalFill className="text-2xl text-violet-400" />
+                <h3 className="text-lg md:text-xl font-bold text-violet-400">My Journey</h3>
+              </div>
+              <p className="text-white/80 text-sm md:text-base lg:text-lg leading-relaxed font-normal">
+                I'm Pranitha Saravanan from Madurai, currently pursuing my Bachelor's degree in Computer Science and Engineering at Kamaraj College of Engineering and Technology. My journey in software engineering is driven by a deep passion for full-stack web development, database management, and solving complex algorithmic challenges. Over the years, I have built and deployed scalable web applications, integrated secure backend architectures, and worked extensively with database management systems. With a continuous learning mindset, I thrive in fast-paced environments, actively participate in hackathons to build innovative projects, and constantly explore new frameworks and tools. Beyond my academic pursuits, I am deeply involved in exploring emerging technologies, focusing on how modern digital infrastructure can solve real-world problems. I actively engage with developer communities, keeping my skills sharp and staying ahead of industry trends. Looking ahead, I am eager to leverage my technical expertise, creative problem-solving skills, and collaborative spirit to contribute to innovative software development roles, architecting solutions that drive meaningful impact.
+              </p>
+            </div>
           </div>
           <div className="flex-1 flex flex-col gap-6">
-            <div>
-              <h3 className="text-white border-4 border-b-0 p-4 md:p-5 rounded-t-2xl">
-                <FaCode className="text-3xl md:text-4xl inline-block text-violet-400" />
-                <span className="inline-block ml-2 text-lg md:text-xl lg:text-2xl align-middle text-violet-400">
-                  Full-Stack Development
-                </span>
-              </h3>
-              <p className="text-white border-4 border-t-0 p-4 md:p-5 rounded-b-2xl text-sm md:text-base lg:text-lg leading-relaxed">
-                Experienced in MERN stack development, building scalable web platforms, and integrating modern frameworks. I focus on developing secure backend architectures and designing responsive, user-friendly frontend interfaces that deliver seamless digital experiences.
-              </p>
+            <div className="border border-purple-400 rounded-2xl shadow-lg p-6 md:p-8 bg-black/40 backdrop-blur-lg hover:scale-105 transition-transform duration-300 flex flex-col justify-between">
+              <div>
+                <div className="flex items-center gap-2 mb-3 text-purple-300">
+                  <FaCode className="text-2xl text-violet-400" />
+                  <h3 className="text-lg md:text-xl font-bold text-violet-400">Full-Stack Development</h3>
+                </div>
+                <p className="text-white/80 text-sm md:text-base lg:text-lg leading-relaxed font-normal">
+                  Experienced in PERN stack development, building scalable web platforms, and integrating modern frameworks. I focus on developing secure backend architectures and designing responsive, user-friendly frontend interfaces that deliver seamless digital experiences.
+                </p>
+              </div>
             </div>
 
-            <div>
-              <h3 className="text-white border-4 border-b-0 p-4 md:p-5 rounded-t-2xl">
-                <FaLightbulb className="text-3xl md:text-4xl inline-block text-violet-400" />
-                <span className="inline-block ml-2 text-lg md:text-xl lg:text-2xl align-middle text-violet-400">
-                  Problem Solving & Algorithms
-                </span>
-              </h3>
-              <p className="text-white border-4 border-t-0 p-4 md:p-5 rounded-b-2xl text-sm md:text-base lg:text-lg leading-relaxed">
-                Possess strong problem-solving and algorithmic abilities demonstrated through hackathons and hands-on projects. I enjoy designing elegant solutions for complex logic and optimization problems using clean code.
-              </p>
+            <div className="border border-purple-400 rounded-2xl shadow-lg p-6 md:p-8 bg-black/40 backdrop-blur-lg hover:scale-105 transition-transform duration-300 flex flex-col justify-between">
+              <div>
+                <div className="flex items-center gap-2 mb-3 text-purple-300">
+                  <FaLightbulb className="text-2xl text-violet-400" />
+                  <h3 className="text-lg md:text-xl font-bold text-violet-400">Problem Solving & Algorithms</h3>
+                </div>
+                <p className="text-white/80 text-sm md:text-base lg:text-lg leading-relaxed font-normal">
+                  Possess strong problem-solving and algorithmic abilities demonstrated through hackathons and hands-on projects. I enjoy designing elegant solutions for complex logic and optimization problems using clean code.
+                </p>
+              </div>
             </div>
 
-            <div>
-              <h3 className="text-white border-4 border-b-0 p-4 md:p-5 rounded-t-2xl">
-                <FaDatabase className="text-3xl md:text-4xl inline-block text-violet-400" />
-                <span className="inline-block ml-2 text-lg md:text-xl lg:text-2xl align-middle text-violet-400">
-                  Database Management
-                </span>
-              </h3>
-              <p className="text-white border-4 border-t-0 p-4 md:p-5 rounded-b-2xl text-sm md:text-base lg:text-lg leading-relaxed">
-                Skilled in database management and design across SQL and NoSQL environments like MySQL, PostgreSQL, and MongoDB. I focus on schema modeling, query performance, data integrity, and creating robust database structures.
-              </p>
+            <div className="border border-purple-400 rounded-2xl shadow-lg p-6 md:p-8 bg-black/40 backdrop-blur-lg hover:scale-105 transition-transform duration-300 flex flex-col justify-between">
+              <div>
+                <div className="flex items-center gap-2 mb-3 text-purple-300">
+                  <FaDatabase className="text-2xl text-violet-400" />
+                  <h3 className="text-lg md:text-xl font-bold text-violet-400">Database Management</h3>
+                </div>
+                <p className="text-white/80 text-sm md:text-base lg:text-lg leading-relaxed font-normal">
+                  Skilled in database management and design across SQL and NoSQL environments like MySQL, PostgreSQL, and MongoDB. I focus on schema modeling, query performance, data integrity, and creating robust database structures.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -329,7 +329,7 @@ export default function Home() {
             </span>
           </button>
         </div>
-        <div className="w-full max-w-2xl mx-auto">
+        <div className="w-full max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-12">
           {skills.map((skill, index) => (
             <SkillItem key={index} skill={skill} index={index} />
           ))}

@@ -18,3 +18,7 @@ body {
 section {
   scroll-margin-top: 5rem; /* adjust to match your navbar height */
 }
+
+p {
+  text-align: justify;
+}
